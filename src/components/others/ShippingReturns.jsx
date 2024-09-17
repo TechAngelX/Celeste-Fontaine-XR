@@ -1,9 +1,11 @@
 import React from "react";
+import '../../index.css';
+
 
 const ShippingReturns = (props) => {
   return (
     <React.Fragment>
-      <p>Your order of 100$ or more gets free standard delivery.</p>
+      <p>Your order of £100 or more gets free standard delivery.</p>
       <ul>
         <li>Standard delivered 4-5 Business Days</li>
         <li>Express delivered 2-4 Business Days</li>

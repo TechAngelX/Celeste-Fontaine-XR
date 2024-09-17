@@ -1,3 +1,5 @@
+import '../../index.css';
+
 const QuestionAnswer = (props) => {
   return (
     <div className="border-bottom mb-3">

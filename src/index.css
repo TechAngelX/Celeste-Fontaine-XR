@@ -7,7 +7,6 @@ body {
     background: linear-gradient(to bottom, #000000, #000000); /* Apply Ricki Apple Style background to body */
     color: #333; /* Default Text Colour */
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-
 }
 
 .required:after {

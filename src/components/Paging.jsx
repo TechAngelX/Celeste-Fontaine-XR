@@ -1,4 +1,6 @@
 import { Component } from "react";
+import '../index.css';
+
 import PropTypes from "prop-types";
 
 const LEFT_PAGE = "LEFT";

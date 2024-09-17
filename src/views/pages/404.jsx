@@ -1,4 +1,5 @@
 import { lazy } from "react";
+import '../../index.css';
 const Search = lazy(() => import("../../components/Search"));
 
 const NotFoundView = () => {

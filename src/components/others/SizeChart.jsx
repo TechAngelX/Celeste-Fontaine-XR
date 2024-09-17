@@ -1,9 +1,11 @@
 import React from "react";
+import '../../index.css';
+
 
 const SizeChart = (props) => {
   return (
     <React.Fragment>
-      <div className="table-responsive">
+      <div className="table-responsive ricki-apple-style">
         <table className="table table-striped table-hover">
           <tbody>
             <tr>

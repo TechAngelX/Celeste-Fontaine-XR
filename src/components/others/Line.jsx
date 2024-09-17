@@ -1,8 +1,9 @@
 import React from "react";
+import "../../index.css";
 
 const Line = (props) => {
   return (
-    <div className={`progress ${props.className}`} style={{ height: 1 }}>
+    <div className={`progress ${props.className} `} style={{ height: 10 }}>
       <div
         className="progress-bar"
         role="progressbar"

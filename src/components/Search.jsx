@@ -1,3 +1,5 @@
+import '../index.css';
+
 const Search = () => {
   return (
     <form action="#" className="search">

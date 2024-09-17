@@ -1,5 +1,7 @@
 import { lazy } from "react";
 import { Link } from "react-router-dom";
+import '../../index.css';
+
 import { ReactComponent as IconJournalCheck } from "bootstrap-icons/icons/journal-check.svg";
 import { ReactComponent as IconChatRightText } from "bootstrap-icons/icons/chat-right-text.svg";
 import { ReactComponent as IconNewspaper } from "bootstrap-icons/icons/newspaper.svg";

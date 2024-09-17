@@ -1,3 +1,5 @@
+import './index.css';
+
 export const loadState = () => {
     try {
       const serializedState = localStorage.getItem("cfstate");

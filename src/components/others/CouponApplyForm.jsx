@@ -2,6 +2,8 @@ import React from "react";
 import { Field, reduxForm } from "redux-form";
 import { compose } from "redux";
 import renderFormField from "../../helpers/renderFormField";
+import '../../index.css';
+
 import {
   required,
 } from "../../helpers/validation";

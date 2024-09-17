@@ -1,3 +1,5 @@
+import '../index.css';
+
 const DocumentationView = () => {
   return (
     <div className="container mt-3">
