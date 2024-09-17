@@ -1,6 +1,8 @@
 import React, { lazy, Component } from "react";
 import { Link } from "react-router-dom";
 import { data } from "../data";
+// import '../index.css';
+
 import { ReactComponent as IconLaptop } from "bootstrap-icons/icons/laptop.svg";
 import { ReactComponent as IconHeadset } from "bootstrap-icons/icons/headset.svg";
 import { ReactComponent as IconPhone } from "bootstrap-icons/icons/phone.svg";
@@ -9,6 +11,7 @@ import { ReactComponent as IconDisplay } from "bootstrap-icons/icons/display.svg
 import { ReactComponent as IconHdd } from "bootstrap-icons/icons/hdd.svg";
 import { ReactComponent as IconUpcScan } from "bootstrap-icons/icons/upc-scan.svg";
 import { ReactComponent as IconTools } from "bootstrap-icons/icons/tools.svg";
+
 
 const Support = lazy(() => import("../components/Support"));
 const Banner = lazy(() => import("../components/carousel/Banner"));
@@ -64,8 +67,8 @@ class HomeView extends Component {
 
     return (
         <React.Fragment>
-          <Banner className="mb-3 ricki-apple-style" id="carouselHomeBanner" data={data.banner} />
-          <div className="container-fluid bg-light mb-3 ricki-apple-style">
+          <Banner className="mb-3" id="carouselHomeBanner" data={data.banner} />
+          <div className="container-fluid bg-light mb-3 ">
             <div className="row g-3">
               <div className="col-md-9">
                 <Carousel id="elect-product-category" className="mb-3">
@@ -79,7 +82,7 @@ class HomeView extends Component {
               </div>
             </div>
           </div>
-          <div className="container-fluid bg-light mb-3 ricki-apple-style">
+          <div className="container-fluid bg-light mb-3">
             <div className="row">
               <div className="col-md-12">
                 <CardDealsOfTheDay

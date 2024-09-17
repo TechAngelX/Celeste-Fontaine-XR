@@ -1,4 +1,5 @@
 import { lazy } from "react";
+import "../../index.css";
 const ContactUsForm = lazy(() => import("../../components/ContactUsForm"));
 
 const ContactUsView = () => {

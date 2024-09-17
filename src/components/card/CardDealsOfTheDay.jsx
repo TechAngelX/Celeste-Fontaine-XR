@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Countdown from "react-countdown";
+import "../../index.css";
 
 // Random component
 const Completionist = () => <span>Deals End!</span>;

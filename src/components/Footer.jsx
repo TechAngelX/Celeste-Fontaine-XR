@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
+import "../index.css";
 
 const Footer = () => {
   return (
     <footer>
-      <div className="container-fluid bg-primary">
+      <div className="container-fluid">
         <div className="row ">
           <div className="col-md-9 py-3 text-white">
             Get connected with us on social networks!

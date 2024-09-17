@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import "../../index.css";
 
 const CardProductList = (props) => {
   const product = props.data;
