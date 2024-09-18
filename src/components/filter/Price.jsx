@@ -2,10 +2,10 @@ import React from "react";
 
 const FilterPrice = (props) => {
   return (
-    <div className="card mb-3 ricki-fade-in">
-      <div
-        className="card-header fw-bold text-uppercase accordion-icon-button"
-        data-bs-toggle="collapse"
+      <div className="card mb-3 ricki-glass-effect ricki-fade-in ">
+        <div
+            className="card-header fw-bold text-uppercase accordion-icon-button"
+            data-bs-toggle="collapse"
         data-bs-target="#filterPrice"
         aria-expanded="true"
         aria-controls="filterPrice"

@@ -3,12 +3,18 @@
 /* Global styles */
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, #000000, #000000); /* Apply Ricki Apple Style background to body */
-    color: #333; /* Default Text Colour */
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: linear-gradient(to bottom, #000000, #000000); /* Set both colors to black */
+    color: #333; /* Default Text Colour */
 }
 
+/* Container with full width */
+.container-fluid {
+    background: linear-gradient(to bottom, #000000, #000000); /* Set both colors to black */
+    padding: 0; /* Remove default padding if needed */
+}
+
+/* Required field indicator */
 .required:after {
     content: " *";
     color: red;
@@ -69,16 +75,16 @@ body {
     vertical-align: -0.125em;
 }
 
-/* Ricki Apple Background Style - Main Background Colour*/
-/* =====================================================*/
+/* Ricki Apple Background Style - Main Background Colour */
+/* ===================================================== */
 .ricki-apple-bg {
-    background: linear-gradient(to bottom, #000000, #000000);
+    background: linear-gradient(to bottom, #231b1b, #b2aaaa);
     color: #333;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
-/* Ricki Apple Glass-Effect Style - GLOBAL*/
-/* =======================================*/
+/* Ricki Apple Glass-Effect Style - GLOBAL */
+/* ======================================= */
 .ricki-glass-effect {
     background: rgba(255, 255, 255, 0.12); /* Slightly less opaque background for a softer look */
     backdrop-filter: blur(18px); /* Strong blur effect for glass appearance */
@@ -90,8 +96,8 @@ body {
     transition: background 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
 }
 
-/* Ricki Apple fade-in Style - GLOBAL*/
-/* ==================================*/
+/* Ricki Apple fade-in Style - GLOBAL */
+/* ================================== */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -102,6 +108,7 @@ body {
         transform: translateY(0);
     }
 }
+
 /* Apply fade-in animation to elements */
 .ricki-fade-in {
     opacity: 0; /* Initial state is invisible */
@@ -112,21 +119,12 @@ body {
     opacity: 1; /* Visible state */
     animation: fadeIn 1.5s ease-in-out forwards; /* Use animation to fade in */
 }
-/* ==================================*/
-
-
-
-
 
 /* Accordion button */
 .accordion-icon-button {
     display: flex;
     border-radius: inherit;
 }
-
-
-
-
 
 .accordion-icon-button:not(.collapsed)::after {
     background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2016%2016'%20fill%3D'%23%7B%24accordion-icon-color%7D'%3E%3Cpath%20fill-rule%3D'evenodd'%20d%3D'M1.646%204.646a.5.5%200%200%201%20.708%200L8%2010.293l5.646-5.647a.5.5%200%200%201%20.708.708l-6%206a.5.5%200%200%201-.708%200l-6-6a.5.5%200%200%201%200-.708z'%2F%3E%3C%2Fsvg%3E");

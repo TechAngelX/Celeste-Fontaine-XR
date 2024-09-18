@@ -3,7 +3,7 @@ import '../../styles/index.css';
 
 const FilterColor = (props) => {
   return (
-      <div className="card mb-3 ricki-glass-effect ricki-fade-in">
+      <div className="card mb-3 ricki-glass-effect ricki-fade-in ">
         <div
             className="card-header fw-bold text-uppercase accordion-icon-button"
         data-bs-toggle="collapse"

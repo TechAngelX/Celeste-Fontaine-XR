@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import '../../styles/index.css';
+import '../../styles/FilterCategory.css';
 
 const FilterCategory = () => {
   useEffect(() => {
@@ -30,7 +31,7 @@ const FilterCategory = () => {
   }, []); // Empty dependency array ensures this runs once on mount
 
   return (
-      <div className="card mb-3 accordion ricki-glass-effect ricki-fade-in">
+      <div className="card mb-3 ricki-glass-effect ricki-fade-in ">
         <div
             className="card-header fw-bold text-uppercase accordion-icon-button"
             data-bs-toggle="collapse"

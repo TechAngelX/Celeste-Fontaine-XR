@@ -4,7 +4,7 @@ import '../../styles/index.css';
 const CardProductList = (props) => {
   const product = props.data;
   return (
-    <div className="card">
+    <div className="card ricki-apple-bg">
       <div className="row g-0">
         <div className="col-md-3 text-center">
           <img src={product.img} className="img-fluid" alt="..." />
