@@ -1,12 +1,20 @@
 /* index.css */
 
+@font-face {
+    font-family: 'SF Pro';
+    src: url('/assets/fonts/SF-Pro.woff') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* Global styles */
 body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: 'SF Pro', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     background: linear-gradient(to bottom, #000000, #000000); /* Set both colors to black */
     color: #333; /* Default Text Colour */
 }
+
 
 /* Container with full width */
 .container-fluid {
