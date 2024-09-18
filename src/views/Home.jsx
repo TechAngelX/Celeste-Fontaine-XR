@@ -1,7 +1,7 @@
 import React, { lazy, Component } from "react";
 import { Link } from "react-router-dom";
 import { data } from "../data";
-import '../index.css';
+import '../styles/index.css';
 
 import { ReactComponent as IconLaptop } from "bootstrap-icons/icons/laptop.svg";
 import { ReactComponent as IconHeadset } from "bootstrap-icons/icons/headset.svg";
@@ -63,7 +63,7 @@ class HomeView extends Component {
   render() {
     return (
         <>
-          <Banner className="mb-3" id="carouselHomeBanner" data={data.banner} />
+          <Banner className="mb-3" id="carouselHomeBanner" data={data.banner} interval={200} />
           <div className="container-fluid bg-light mb-3">
             <div className="row g-3">
               <div className="col-md-9">
@@ -93,7 +93,7 @@ class HomeView extends Component {
               </div>
             </div>
           </div>
-          <div className="bg-info bg-gradient p-3 text-center mb-3">
+          <div className="bg-info ricki-apple-bg p-3 text-center mb-3">
             <h4 className="m-0">Timeless Elegance, Modern Trends</h4>
           </div>
           <div className="container">

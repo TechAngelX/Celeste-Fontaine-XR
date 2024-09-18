@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { ReactComponent as IconBootstrapFill } from "bootstrap-icons/icons/bootstrap-fill.svg";
+import '../../styles/index.css';
 
 const Invoice = () => {
   return (

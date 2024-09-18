@@ -1,6 +1,8 @@
 import { lazy } from "react";
 import { Link } from "react-router-dom";
 import { data } from "../../data";
+import '../../styles/index.css';
+
 const Banner = lazy(() => import("../../components/carousel/Banner"));
 const CardList = lazy(() => import("../../components/blog/CardList"));
 const Widgets = lazy(() => import("../../components/blog/Widgets"));

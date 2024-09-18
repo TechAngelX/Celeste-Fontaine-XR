@@ -1,0 +1,11 @@
+/* Ricki Apple local Categories Style*/
+/* ==================================*/
+
+/*For use with the side "Categories": Categories, Price, Size,
+Customer Review, ColourFilter by, Product Tags and Customer Service */
+
+.ricki-categories {
+    background: linear-gradient(to bottom, #000000, #000000);
+    color: #333;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}

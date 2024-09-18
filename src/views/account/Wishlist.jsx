@@ -1,5 +1,7 @@
 import { lazy } from "react";
 import { data } from "../../data";
+import '../../styles/index.css';
+
 const CardProductList2 = lazy(() =>
   import("../../components/card/CardProductList2")
 );

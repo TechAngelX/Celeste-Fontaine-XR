@@ -2,7 +2,7 @@ import React from "react";
 
 const FilterPrice = (props) => {
   return (
-    <div className="card mb-3">
+    <div className="card mb-3 ricki-fade-in">
       <div
         className="card-header fw-bold text-uppercase accordion-icon-button"
         data-bs-toggle="collapse"

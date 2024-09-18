@@ -1,18 +1,20 @@
 import React from "react";
-import "../../index.css";
+import '../../styles/index.css';
 
-const Carousel = (props) => {
+const Carousel = ({ id, className, interval = 2000, children }) => {
     return (
         <div
-            id={props.id}
-            className={`carousel slide ${props.className}`}
+            id={id}
+            className={`carousel slide ${className}`}
             data-bs-ride="carousel"
-            data-bs-interval={props.interval} // This sets the interval for the slides
+            data-bs-interval={interval} // This sets the interval for the slides
         >
-            <div className="carousel-inner">{props.children}</div>
+            <div className="carousel-inner">
+                {children}
+            </div>
             <a
                 className="carousel-control-prev"
-                href={"#" + props.id}
+                href={`#${id}`}
                 role="button"
                 data-bs-slide="prev"
             >
@@ -21,7 +23,7 @@ const Carousel = (props) => {
             </a>
             <a
                 className="carousel-control-next"
-                href={"#" + props.id}
+                href={`#${id}`}
                 role="button"
                 data-bs-slide="next"
             >

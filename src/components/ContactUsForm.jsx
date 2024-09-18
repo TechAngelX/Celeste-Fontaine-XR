@@ -1,7 +1,7 @@
 import React from "react";
 import { Field, reduxForm } from "redux-form";
 import { compose } from "redux";
-import '../index.css';
+import "../styles/index.css";
 
 import {
   renderFormGroupField,

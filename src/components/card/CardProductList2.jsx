@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "../../index.css";
+import '../../styles/index.css';
 
 
 const CardProductList2 = (props) => {

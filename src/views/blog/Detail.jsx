@@ -1,5 +1,7 @@
 import { lazy } from "react";
 import { Link } from "react-router-dom";
+import '../../styles/index.css';
+
 const Widgets = lazy(() => import("../../components/blog/Widgets"));
 
 const BlogDetailView = () => {

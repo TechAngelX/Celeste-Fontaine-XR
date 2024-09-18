@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import '../../styles/index.css';
 
 const CardProductGrid = (props) => {
   const product = props.data;

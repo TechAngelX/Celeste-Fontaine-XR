@@ -1,7 +1,7 @@
 import { ReactComponent as IconCash } from "bootstrap-icons/icons/cash.svg";
 import { ReactComponent as IconHeadset } from "bootstrap-icons/icons/headset.svg";
 import { ReactComponent as IconTruck } from "bootstrap-icons/icons/truck.svg";
-import '../index.css';
+import '../styles/index.css';
 
 const Support = (props) => {
   return (

@@ -1,5 +1,7 @@
 import { lazy } from "react";
 import { Link } from "react-router-dom";
+import '../../styles/index.css';
+
 const SingUpForm = lazy(() => import("../../components/account/SignUpForm"));
 
 const SignUpView = () => {

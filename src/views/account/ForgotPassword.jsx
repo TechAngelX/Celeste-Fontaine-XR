@@ -1,4 +1,6 @@
 import { lazy } from "react";
+import '../../styles/index.css';
+
 const ForgotPasswordForm = lazy(() =>
   import("../../components/account/ForgotPasswordForm")
 );
