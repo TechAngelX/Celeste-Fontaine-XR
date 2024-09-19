@@ -1,4 +1,5 @@
 import React, { lazy } from "react";
+import '../../styles/fonts.css'
 const Line = lazy(() => import("../others/Line"));
 
 const About = (props) => {

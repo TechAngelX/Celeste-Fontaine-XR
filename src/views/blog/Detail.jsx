@@ -15,8 +15,7 @@ const BlogDetailView = () => {
         />
         <div className="card-img-overlay text-center">
           <h1 className="card-title position-absolute bottom-0 mb-3">
-            It is a long established fact that a reader will be distracted by
-            the readable content
+           The remarkable world of Céleste Fontaine
           </h1>
         </div>
       </div>
@@ -25,7 +24,7 @@ const BlogDetailView = () => {
         <div className="row">
           <div className="col-md-8">
             <div className="display-6 border-bottom pb-3 mb-1">
-              Sample blog post
+              <h2>Fashion Meets Food.</h2>
             </div>
             <p className="text-muted small">
               <i className="bi bi-calendar-event me-1"></i>

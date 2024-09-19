@@ -1,19 +1,32 @@
 /* index.css */
 
-@font-face {
-    font-family: 'SF Pro';
-    src: url('/assets/fonts/SF-Pro.woff') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
+@import url('./fonts.css');
 
 /* Global styles */
 body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     margin: 0;
-    font-family: 'SF Pro', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    background: linear-gradient(to bottom, #000000, #000000); /* Set both colors to black */
-    color: #333; /* Default Text Colour */
+    font-family: 'SF Pro Text Ultralight', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 1.4;
+    background: linear-gradient(to bottom, #000000, #000000);
+    color: #333 !important;
 }
+
+/* Headline styles */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'SF Pro Display Medium', 'SF Pro Text Ultralight', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-weight: 700;
+}
+
+/* Paragraph text */
+p {
+    font-family: 'SF Pro Text Light', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-weight: 200;
+}
+
 
 
 /* Container with full width */
