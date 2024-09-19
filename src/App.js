@@ -1,4 +1,3 @@
-// src/App.js
 import React, { Suspense, lazy } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -15,24 +14,25 @@ const HomeView = lazy(() => import("./views/Home"));
 // ... (other lazy imports)
 
 function App() {
-  return (
-      <BrowserRouter>
-        <React.Fragment>
-          <Header />
-          <TopMenu />
-          <Suspense
-              fallback={<div className="text-white text-center mt-3">Loading...</div>}
-          >
-            <Routes>
-              <Route exact path="/" element={<HomeView />} />
-              <Route path="/scrollmagic" element={<CelesteFontaine />} /> {/* Updated path */}
-              {/* Other routes */}
-            </Routes>
-          </Suspense>
-          <Footer />
-        </React.Fragment>
-      </BrowserRouter>
-  );
+    return (
+        <BrowserRouter>
+            <React.Fragment>
+                <Header />
+                <TopMenu />
+                <Suspense
+                    fallback={<div className="text-white text-center mt-3">Loading...</div>}
+                >
+                    <Routes>
+                        {/* Set CelesteFontaine as the default route */}
+                        <Route exact path="/" element={<CelesteFontaine />} />
+                        <Route path="/home" element={<HomeView />} /> {/* Home route */}
+                        {/* Other routes */}
+                    </Routes>
+                </Suspense>
+                <Footer />
+            </React.Fragment>
+        </BrowserRouter>
+    );
 }
 
 export default App;
