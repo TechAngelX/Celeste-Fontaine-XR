@@ -1,8 +1,8 @@
-// src/components/CelesteFontaine.js
 import React, { useEffect } from 'react';
-import '../styles/CelesteFontaine.css';
 import ScrollMagic from 'scrollmagic';
 import { TweenMax } from 'gsap';
+import '../styles/CelesteFontaine.css'; // Import component-specific CSS
+import '../styles/fonts.css'; // Import component-specific CSS
 
 const CelesteFontaine = () => {
     useEffect(() => {
@@ -20,9 +20,10 @@ const CelesteFontaine = () => {
 
     return (
         <div className="celeste-fontaine">
-            <section className="section" id="section1">Section 1</section>
-            <section className="section" id="section2">Section 2</section>
-            <section className="section" id="section3">Section 3</section>
+            <a href="/" className="back-to-home">Back to Home</a>
+            <section className="section" id="section1">Section 1: Welcome to Celeste Fontaine</section>
+            <section className="section" id="section2">Section 2: Explore Our Features</section>
+            <section className="section" id="section3">Section 3: Contact Us</section>
         </div>
     );
 };

@@ -5,8 +5,38 @@
 
 .section {
     height: 100vh;
-    background-color: #f0f0f0;
     display: flex;
     align-items: center;
     justify-content: center;
+    color: white; /* Default text color */
+    transition: background-color 0.5s ease; /* Smooth transition for background color */
+}
+
+/* Gradient backgrounds from mostly black to very dark gray */
+#section1 {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 2)); /* Solid black to very dark gray */
+}
+
+#section2 {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 2), rgba(0, 0, 0, 1)); /* Very dark gray to slightly lighter gray */
+}
+
+#section3 {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 6), rgba(0, 0, 0, 10)); /* Slightly lighter gray to very light gray */
+}
+
+.section h1 {
+    font-family: 'SF Pro Display Bold', sans-serif;
+    font-size: 3rem; /* Adjust size as needed */
+}
+
+/* Apply SF Pro Display styles */
+.section-header-h1 {
+    font-family: 'SF Pro Display Bold', sans-serif;
+    font-size: 3rem; /* Adjust size as needed */
+}
+
+.section1-paragraph {
+    font-family: 'SF Pro Text Regular', sans-serif;
+    font-size: 1.5rem; /* Adjust size as needed */
 }
