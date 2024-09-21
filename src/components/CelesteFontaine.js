@@ -12,7 +12,7 @@ const CelesteFontaine = () => {
             scrollTrigger: {
                 trigger: '#section1',
                 start: 'top 80%',
-                end: 'bottom 20%',
+                end: 'bottom z0%',
                 scrub: true
             },
             scale: 1.5,
@@ -22,16 +22,25 @@ const CelesteFontaine = () => {
 
     return (
         <div className="celeste-fontaine">
-            <a href="/" className="back-to-home">Back to Home</a>
+            <a href="/" className="back-to-home">Céleste Fontaine</a>
             <section className="section" id="section1">
-                Section 1: Welcome to Celeste Fontaine
+                <div className="content">
+                    <h2>Section 1: Welcome to Celeste Fontaine</h2>
+                    <video width="100%" height="auto" autoPlay loop muted>
+                        <source src="/images/video/IntroVid.mp4" type="video/mp4"/>
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
             </section>
+
             <section className="section" id="section2">
                 Section 2: Explore Our Features
-                <ThreeDViewer /> {/* Display your 3D model here */}
+                <ThreeDViewer/> {/* Display your 3D model here */}
             </section>
             <section className="section" id="section3">
                 Section 3: Contact Us
+                <ThreeDViewer/> {/* Display your 3D model here */}
+
             </section>
         </div>
     );

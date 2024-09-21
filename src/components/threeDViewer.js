@@ -27,7 +27,7 @@ const ThreeDViewer = () => {
         // Load the first model
         objLoader.load('/3dmodels/Mens_Jacket_CFXR_BASIC.obj', (object) => {
             object.scale.set(0.01, 0.01, 0.01);
-            object.position.set(0, -1, 3);
+            object.position.set(0, -17, 3);
             scene.add(object);
             objectRef1.current = object; // Store the first loaded object
             console.log('First model loaded successfully');
