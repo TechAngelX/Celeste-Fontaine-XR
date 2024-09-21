@@ -46,3 +46,17 @@
     font-family: 'SF Pro Text Regular', sans-serif;
     font-size: 1.5rem; /* Adjust size as needed */
 }
+
+
+
+/*
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 3)); /
+
+#section2 {
+    background: linear-gradient(to bottom, rgba(0, 255, 0, 1), rgba(0, 128, 0, 1));
+}
+
+#section3 {
+    background: linear-gradient(to bottom, rgba(255, 0, 0, 1), rgba(128, 0, 0, 1));
+}
+ */

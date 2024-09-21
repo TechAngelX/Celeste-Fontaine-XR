@@ -38,7 +38,7 @@ const ThreeDViewer = () => {
         // Load the second model
         objLoader.load('/3dmodels/test.obj', (object) => {
             object.scale.set(0.01, 0.01, 0.01);
-            object.position.set(2, -1, 3); // Adjust position for the second model
+            object.position.set(2, -1, 1); // Adjust position for the second model
             scene.add(object);
             objectRef2.current = object; // Store the second loaded object
             console.log('Second model loaded successfully');

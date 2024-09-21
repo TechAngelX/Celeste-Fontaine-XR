@@ -7,6 +7,8 @@ import TopMenu from "./components/TopMenu";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import CelesteFontaine from "./components/CelesteFontaine"; // Import the component
+import NotFound from "./views/pages/404"; // Correct import for NotFound
+
 
 import "./styles/App.css";
 
@@ -23,9 +25,9 @@ function App() {
                     fallback={<div className="text-white text-center mt-3">Loading...</div>}
                 >
                     <Routes>
-                        <Route exact path="/" element={<CelesteFontaine />} /> {/* Set CelesteFontaine as the home component */}
-                        <Route path="/scrollmagic" element={<CelesteFontaine />} /> {/* Optional: Keep this for another route */}
-                        {/* Add other routes as needed */}
+                        <Route exact path="/" element={<CelesteFontaine />} />
+                        <Route path="/scrollmagic" element={<CelesteFontaine />} />
+                        <Route path="*" element={<NotFound />} /> {/* Catch-all route for 404 */}
                     </Routes>
                 </Suspense>
                 <Footer />
