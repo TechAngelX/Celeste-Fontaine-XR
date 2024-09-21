@@ -14,15 +14,15 @@
 
 /* Gradient backgrounds from mostly black to very dark gray */
 #section1 {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 2)); /* Solid black to very dark gray */
+    background: linear-gradient(to bottom, rgba(0, 0, 255, 1), rgba(0, 0, 128, 1)); /* Solid blue to dark blue */
 }
 
 #section2 {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 2), rgba(0, 0, 0, 1)); /* Very dark gray to slightly lighter gray */
+    background: linear-gradient(to bottom, rgba(0, 255, 0, 1), rgba(0, 128, 0, 1)); /* Solid green to dark green */
 }
 
 #section3 {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 6), rgba(0, 0, 0, 10)); /* Slightly lighter gray to very light gray */
+    background: linear-gradient(to bottom, rgba(255, 0, 0, 1), rgba(128, 0, 0, 1)); /* Solid red to dark red */
 }
 
 .section h1 {
