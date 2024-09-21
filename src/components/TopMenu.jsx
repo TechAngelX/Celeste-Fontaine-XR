@@ -98,7 +98,7 @@ const TopMenu = () => {
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/category">
-                Furniture
+                CFXR
               </Link>
             </li>
             <li className="nav-item">

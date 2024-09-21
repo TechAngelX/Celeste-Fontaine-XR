@@ -1,29 +1,38 @@
 import React, { useEffect } from 'react';
-import ScrollMagic from 'scrollmagic';
-import { TweenMax } from 'gsap';
-import '../styles/CelesteFontaine.css'; // Import component-specific CSS
-import '../styles/fonts.css'; // Import component-specific CSS
+import { gsap } from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+import '../styles/CelesteFontaine.css';
+import ThreeDViewer from './threeDViewer';  // Import your ThreeDViewer component here
 
 const CelesteFontaine = () => {
     useEffect(() => {
-        const controller = new ScrollMagic.Controller();
+        gsap.registerPlugin(ScrollTrigger);
 
-        new ScrollMagic.Scene({
-            triggerElement: '#section1',
-            duration: '100%',
-            triggerHook: 0.5
-        })
-            .setTween(TweenMax.to('#section1', 1, { scale: 1.5 }))
-            .addIndicators() // Optional for debugging
-            .addTo(controller);
+        gsap.to('#section1', {
+            scrollTrigger: {
+                trigger: '#section1',
+                start: 'top 80%',
+                end: 'bottom 20%',
+                scrub: true
+            },
+            scale: 1.5,
+            duration: 2
+        });
     }, []);
 
     return (
         <div className="celeste-fontaine">
             <a href="/" className="back-to-home">Back to Home</a>
-            <section className="section" id="section1">Section 1: Welcome to Celeste Fontaine</section>
-            <section className="section" id="section2">Section 2: Explore Our Features</section>
-            <section className="section" id="section3">Section 3: Contact Us</section>
+            <section className="section" id="section1">
+                Section 1: Welcome to Celeste Fontaine
+            </section>
+            <section className="section" id="section2">
+                Section 2: Explore Our Features
+                <ThreeDViewer /> {/* Display your 3D model here */}
+            </section>
+            <section className="section" id="section3">
+                Section 3: Contact Us
+            </section>
         </div>
     );
 };
