@@ -1,6 +1,9 @@
 # Make Sure you Ignore the node_modules directory
 /node_modules/
 
+/src/config/
+
+
 # macOS system files
 .DS_Store
 
