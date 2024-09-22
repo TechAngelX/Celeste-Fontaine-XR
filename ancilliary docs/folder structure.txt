@@ -1,0 +1,21 @@
+src/
+├── components/
+│   ├── Header.jsx
+│   ├── Footer.jsx
+│   ├── Button.jsx
+│   └── ...
+├── pages/
+│   ├── Home.jsx
+│   ├── About.jsx
+│   ├── Contact.jsx
+│   └── ...
+├── utils/
+│   ├── helpers.js
+│   ├── api.js
+│   └── ...
+├── styles/
+│   ├── App.css
+│   ├── components/
+│   │   └── Button.css
+│   └── ...
+└── index.js

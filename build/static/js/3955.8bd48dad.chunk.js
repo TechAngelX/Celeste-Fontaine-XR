@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunke_commerce_template=self.webpackChunke_commerce_template||[]).push([[3955],{3955:function(e,s,t){t.r(s);t(2791),t(9174);var c=t(184);s.default=function(e){return(0,c.jsx)("div",{className:"card mb-3 ricki-glass-effect ricki-fade-in ",children:(0,c.jsxs)("div",{className:"card-body fw-bold text-uppercase",children:["Filter by"," ",(0,c.jsxs)("button",{type:"reset",className:"btn btn-sm btn-light",children:[(0,c.jsx)("span",{"aria-hidden":"true",children:"\xd7"})," Clear All"]})]})})}}}]);
+//# sourceMappingURL=3955.8bd48dad.chunk.js.map
