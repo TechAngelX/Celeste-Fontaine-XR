@@ -5,30 +5,26 @@ import '../../styles/FilterCategory.css';
 
 const FilterCategory = () => {
   useEffect(() => {
-    // Create an intersection observer
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
-          // Optionally, unobserve the element once it's visible
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.1 }); // Adjust threshold as needed
+    }, { threshold: 0.1 });
 
-    // Target elements with the fade-in class
     const fadeInElements = document.querySelectorAll('.ricki-fade-in');
     fadeInElements.forEach((element) => {
       observer.observe(element);
     });
 
-    // Clean up observer on component unmount
     return () => {
       fadeInElements.forEach((element) => {
         observer.unobserve(element);
       });
     };
-  }, []); // Empty dependency array ensures this runs once on mount
+  }, []);
 
   return (
       <div className="card mb-3 ricki-glass-effect ricki-fade-in ">
@@ -43,32 +39,32 @@ const FilterCategory = () => {
         </div>
         <ul className="list-group list-group-flush show" id="filterCategory">
           <li className="list-group-item">
-            <Link to="/" className="text-decoration-none stretched-link">
+            <Link to="/category/clothing" className="text-decoration-none stretched-link">
               Clothing
             </Link>
           </li>
           <li className="list-group-item">
-            <Link to="/" className="text-decoration-none stretched-link">
+            <Link to="/category/leather-bag" className="text-decoration-none stretched-link">
               Leather Bag
             </Link>
           </li>
-          <li className="list-group-item rick">
-            <Link to="/" className="text-decoration-none stretched-link">
+          <li className="list-group-item">
+            <Link to="/category/trousers" className="text-decoration-none stretched-link">
               Trousers
             </Link>
           </li>
           <li className="list-group-item">
-            <Link to="/" className="text-decoration-none stretched-link">
+            <Link to="/category/sweaters-cardigans" className="text-decoration-none stretched-link">
               Sweaters & Cardigans
             </Link>
           </li>
           <li className="list-group-item">
-            <Link to="/" className="text-decoration-none stretched-link">
+            <Link to="/category/high-heels" className="text-decoration-none stretched-link">
               High Heels
             </Link>
           </li>
           <li className="list-group-item">
-            <Link to="/" className="text-decoration-none stretched-link">
+            <Link to="/category/coats-jackets" className="text-decoration-none stretched-link">
               Coats & Jackets
             </Link>
           </li>

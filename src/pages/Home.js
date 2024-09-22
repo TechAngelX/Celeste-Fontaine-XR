@@ -86,7 +86,7 @@ const HomeView = () => {
                             </div>
                             <div className="col-md-3">
                                 <CardLogin className="mb-3" />
-                                <CardImage src="../../images/banner/Watches.webp" to="promo" />
+                                <CardImage src="/images/banner/Watches.webp" to="promo" />
                             </div>
                         </div>
                     </div>
@@ -106,7 +106,7 @@ const HomeView = () => {
                         <div className="row">
                             {['men', 'women', 'accessories', 'footwear'].map((category, index) => (
                                 <div className="col-md-3" key={index}>
-                                    <Link to="/" className="text-decoration-none">
+                                    <Link to={`/category/${category}`} className="text-decoration-none">
                                         <img
                                             src={`/images/category/${category}.webp`}
                                             className="img-fluid rounded-circle"

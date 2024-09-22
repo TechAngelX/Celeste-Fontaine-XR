@@ -6,6 +6,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import TopMenu from "./components/TopMenu";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+
 import "./styles/App.css";
 
 // Lazy load your views
@@ -31,6 +32,8 @@ const SupportView = lazy(() => import("./pages/Support"));
 const BlogView = lazy(() => import("./views/blog/Blog"));
 const BlogDetailView = lazy(() => import("./views/blog/Detail"));
 const CelesteFontaine = lazy(() => import("./components/CelesteFontaine"));
+const MenView = lazy(() => import("./views/Men")); // Adjusted path
+const WomenView = lazy(() => import("./views/Women")); // Adjusted path
 
 // ErrorBoundary Component
 class ErrorBoundary extends React.Component {
@@ -53,6 +56,8 @@ function App() {
             <Suspense fallback={<div className="text-white text-center mt-3">Loading...</div>}>
                 <ErrorBoundary>
                     <Routes>
+                        <Route path="/men" element={<MenView />} />
+                        <Route path="/women" element={<WomenView />} />
                         <Route path="/" element={<CelesteFontaine />} /> {/* Landing page */}
                         <Route path="/home" element={<HomeView />} /> {/* Your home page */}
                         <Route path="/account/signin" element={<SignInView />} />
