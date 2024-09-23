@@ -2,8 +2,8 @@
 
 /* Header styles */
 .header {
-  background-color: #ffffff;
-  border-bottom: 1px solid #dddddd;
+  background-color: #000000;
+  border-bottom: 1px solid #000000;
 }
 
 /* TopMenu styles */
@@ -32,21 +32,12 @@
   background-color: #e9ecef;
 }
 
-/* Utility classes specific to App */
-.app-utility {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 /* Main container styling */
 .main-container {
-  background: #ffffff; /* White background for the main content */
-  padding: 20px;
-  margin: 20px auto;
-  max-width: 1200px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
-  border-radius: 12px; /* Rounded corners for a modern look */
+  background: #fff; /* Solid white background for cleanliness */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  border-radius: 8px; /* Rounded corners */
+  padding: 20px; /* Padding for main container */
 }
 
 /* Button styles */
@@ -62,6 +53,21 @@
 .profile-btn {
   background-color: #555;
   color: #fff;
+}
+
+.btn-custom {
+  background-color: #6c757d; /* muted color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-family: 'Montserrat', sans-serif;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.btn-custom:hover {
+  background-color: #5a6268; /* darker shade */
+  transform: scale(1.05);
 }
 
 /* Dropdown menu styling */

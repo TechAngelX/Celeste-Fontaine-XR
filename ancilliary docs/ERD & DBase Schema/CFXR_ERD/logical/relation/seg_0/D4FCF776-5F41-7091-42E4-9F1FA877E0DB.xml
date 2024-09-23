@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="USER_ACC_TO_CUSTOMER" directorySegmentName="seg_0" id="D4FCF776-5F41-7091-42E4-9F1FA877E0DB">
+<createdBy>xeon2035</createdBy>
+<createdTime>2024-09-22 08:16:17 UTC</createdTime>
+<ownerDesignName>CFXR_ERD</ownerDesignName>
+<engineerTo>
+<item key="99A9EA70-3299-DC36-B808-E8A38E12CE6E" value="true"/>
+</engineerTo>
+<sourcePk>8A2449AC-C49C-5CEC-4CB9-F714C0F09430</sourcePk>
+<identifying>false</identifying>
+<nameOnSource>has</nameOnSource>
+<nameOnTarget>has a</nameOnTarget>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>3867B9E0-7411-0D91-7317-636EC4442579</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>61BF1538-6039-43FE-0739-1AA68D4E32B5</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

@@ -3,6 +3,8 @@ import { compose } from "redux";
 import { Link } from "react-router-dom";
 import renderFormGroupField from "../../helpers/renderFormGroupField";
 import renderFormField from "../../helpers/renderFormField";
+import '../../styles/index.css';
+
 import {
   required,
   maxLength20,
@@ -15,6 +17,7 @@ import {
 import { ReactComponent as IconPhone } from "bootstrap-icons/icons/phone.svg";
 import { ReactComponent as IconShieldLock } from "bootstrap-icons/icons/shield-lock.svg";
 
+
 const SignUpForm = (props) => {
   const { handleSubmit, submitting, onSubmit, submitFailed } = props;
   return (
@@ -23,7 +26,7 @@ const SignUpForm = (props) => {
       className={`needs-validation ${submitFailed ? "was-validated" : ""}`}
       noValidate
     >
-      <div className="row mb-3">
+      <div className="main-container">
         <div className="col-md-6">
           <Field
             name="firstName"
@@ -48,9 +51,9 @@ const SignUpForm = (props) => {
         </div>
       </div>
       <Field
-        name="mobileNo"
+        name="eMail"
         type="number"
-        label="Mobile no"
+        label=" no"
         component={renderFormGroupField}
         placeholder="Mobile no without country code"
         icon={IconPhone}

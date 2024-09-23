@@ -1,11 +1,12 @@
 import '../../styles/index.css';
+
 const CheckoutView = () => {
   return (
     <div>
       <div className="bg-secondary border-top p-4 text-white mb-3">
         <h1 className="display-6">Checkout</h1>
       </div>
-      <div className="container mb-3">
+      <div className="main-container mb-3">
         <div className="row">
           <div className="col-md-8">
             <div className="card mb-3">

@@ -1,0 +1,151 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="3867B9E0-7411-0D91-7317-636EC4442579" name="USER_ACC">
+<createdBy>xeon2035</createdBy>
+<createdTime>2024-09-22 07:40:28 UTC</createdTime>
+<ownerDesignName>CFXR_ERD</ownerDesignName>
+<engineerTo>
+<item key="99A9EA70-3299-DC36-B808-E8A38E12CE6E" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="user_ID" id="5702F4D0-EBC2-6293-1F46-8AC224DDD28B">
+<createdBy>xeon2035</createdBy>
+<createdTime>2024-09-22 07:40:42 UTC</createdTime>
+<ownerDesignName>CFXR_ERD</ownerDesignName>
+<engineerTo>
+<item key="99A9EA70-3299-DC36-B808-E8A38E12CE6E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<ownDataTypeParameters>,8,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="uName" id="12A5CD9D-A9D7-598D-1C15-A9A3B54FA3D7">
+<createdBy>xeon2035</createdBy>
+<createdTime>2024-09-22 07:45:47 UTC</createdTime>
+<commentInRDBMS><![CDATA[first inital, first 5 characters of last name, 3 random numbers]]></commentInRDBMS>
+<ownerDesignName>CFXR_ERD</ownerDesignName>
+<engineerTo>
+<item key="99A9EA70-3299-DC36-B808-E8A38E12CE6E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>8</dataTypeSize>
+<ownDataTypeParameters>8,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="pWord" id="B999BA3C-3508-3468-2A25-94ADD0C59F0A">
+<createdBy>xeon2035</createdBy>
+<createdTime>2024-09-22 07:53:16 UTC</createdTime>
+<commentInRDBMS><![CDATA[hashed and salted]]></commentInRDBMS>
+<ownerDesignName>CFXR_ERD</ownerDesignName>
+<engineerTo>
+<item key="99A9EA70-3299-DC36-B808-E8A38E12CE6E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="fName" id="1A965B67-0BE8-E84F-1547-B44CC53CFAE8">
+<createdBy>xeon2035</createdBy>
+<createdTime>2024-09-22 07:41:05 UTC</createdTime>
+<ownerDesignName>CFXR_ERD</ownerDesignName>
+<engineerTo>
+<item key="99A9EA70-3299-DC36-B808-E8A38E12CE6E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="lName" id="DCBE93A9-ECA2-54AF-17C8-17B2145CE105">
+<createdBy>xeon2035</createdBy>
+<createdTime>2024-09-22 07:43:22 UTC</createdTime>
+<ownerDesignName>CFXR_ERD</ownerDesignName>
+<engineerTo>
+<item key="99A9EA70-3299-DC36-B808-E8A38E12CE6E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="eMail" id="96621101-8D01-F520-9CD6-E9D00B17EED9">
+<createdBy>xeon2035</createdBy>
+<createdTime>2024-09-22 07:44:14 UTC</createdTime>
+<ownerDesignName>CFXR_ERD</ownerDesignName>
+<engineerTo>
+<item key="99A9EA70-3299-DC36-B808-E8A38E12CE6E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="accType" id="7EC27460-5B7C-61F2-57FE-FBE27738B5B9">
+<createdBy>xeon2035</createdBy>
+<createdTime>2024-09-22 07:52:04 UTC</createdTime>
+<commentInRDBMS><![CDATA[Customer, RetailStaff, ExternalAPI]]></commentInRDBMS>
+<ownerDesignName>CFXR_ERD</ownerDesignName>
+<engineerTo>
+<item key="99A9EA70-3299-DC36-B808-E8A38E12CE6E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="created" id="EE17ACD2-BCB2-35E6-C8E0-1C2B301BAA1D">
+<createdBy>xeon2035</createdBy>
+<createdTime>2024-09-22 08:07:23 UTC</createdTime>
+<ownerDesignName>CFXR_ERD</ownerDesignName>
+<engineerTo>
+<item key="99A9EA70-3299-DC36-B808-E8A38E12CE6E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="modified" id="0E2461C6-66F6-23E6-9AD9-776AB006B9C1">
+<createdBy>xeon2035</createdBy>
+<createdTime>2024-09-22 08:07:50 UTC</createdTime>
+<ownerDesignName>CFXR_ERD</ownerDesignName>
+<engineerTo>
+<item key="99A9EA70-3299-DC36-B808-E8A38E12CE6E" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="8A2449AC-C49C-5CEC-4CB9-F714C0F09430" name="USER_ACC PK">
+<createdBy>xeon2035</createdBy>
+<createdTime>2024-09-22 07:42:05 UTC</createdTime>
+<ownerDesignName>CFXR_ERD</ownerDesignName>
+<engineerTo>
+<item key="99A9EA70-3299-DC36-B808-E8A38E12CE6E" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>5702F4D0-EBC2-6293-1F46-8AC224DDD28B</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

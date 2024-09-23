@@ -1,6 +1,9 @@
+import 'bootswatch/dist/darkly/bootstrap.min.css';
 import React from "react";
 import ReactDOM from "react-dom/client";
-import './styles/index.css';
+// import './styles/index.css';
+import './styles/index.scss';
+
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { createStore } from "redux";
@@ -12,13 +15,15 @@ import { loadState, saveState } from "./localStorage";
 const persistedState = loadState();
 const store = createStore(rootReducer, persistedState);
 
-// Save state to local storage on changes
+// Subscribe to store changes to save state to local storage
 store.subscribe(() => {
-    saveState(store);
+    saveState(store.getState());
 });
 
 // Render the React application
-const root = ReactDOM.createRoot(document.getElementById("root"));
+const rootElement = document.getElementById("root");
+const root = ReactDOM.createRoot(rootElement);
+
 root.render(
     <Provider store={store}>
         <App />

@@ -1,0 +1,60 @@
+// Import Bootstrap and Bootswatch styles
+@import "~bootstrap/scss/bootstrap"; // Import Bootstrap first
+@import "../styles/darkly/variables";
+@import "../styles/darkly/_bootswatch";
+@import url('./fonts.css'); // Your custom fonts import
+
+/* Global styles */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  font-family: 'SF Pro Text Ultralight', sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+  background: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+  color: #000; /* Text color */
+  padding: 20px; /* Global padding */
+}
+
+/* Search bar styles */
+.search-bar {
+  border: 1px solid #ff0000; /* Red border */
+  border-radius: 100px; /* Rounded corners */
+  padding: 10px; /* Padding inside the search bar */
+  width: 100%; /* Full width */
+  max-width: 400px; /* Max width for better layout */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  transition: border-color 0.3s ease; /* Smooth border color change */
+}
+
+.search-bar:focus {
+  border-color: #007aff; /* Change border color on focus */
+  outline: none; /* Remove default outline */
+}
+
+/* Headline styles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'SF Pro Display Medium', sans-serif;
+  font-weight: 700; /* Bold headlines */
+}
+
+/* Paragraph styles */
+p {
+  font-family: 'SF Pro Text Light', sans-serif;
+  color: #666; /* Darker gray for better readability */
+}
+
+/* Utility classes */
+.container-fluid {
+  background: rgba(0, 0, 0, 0.1); /* Light background for containers */
+  padding: 20px; /* Padding for containers */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+}
+
+/* Required field indicator */
+.required:after {
+  content: " *"; /* Indicate required fields */
+  color: #e74c3c; /* Red for required fields */
+}

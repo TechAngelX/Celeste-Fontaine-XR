@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="CFXR_ERD" id="15C6AFDD-B833-322B-2869-27CC0F58FD0B" version="3.5">
+<createdBy>xeon2035</createdBy>
+<createdTime>2024-09-22 07:38:15 UTC</createdTime>
+<ownerDesignName>CFXR_ERD</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>15C6AFDD-B833-322B-2869-27CC0F58FD0B</designId>
+</OSDM_Design>

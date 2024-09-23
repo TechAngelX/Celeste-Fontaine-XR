@@ -1,6 +1,6 @@
 import React, { lazy } from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/CelesteFontaine.css';
+import '../styles/landingPage.css';
 import ThreeDViewer from './threeDViewer'; // Import your ThreeDViewer component here
 
 const CelesteFontaine = () => {

@@ -1,4 +1,5 @@
 /* index.css */
+@import "../styles/darkly/bootstrap.min.css";
 
 @import url('./fonts.css');
 
@@ -7,164 +8,52 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     margin: 0;
-    font-family: 'SF Pro Text Ultralight', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
-    font-weight: 200;
+    font-family: 'SF Pro Text Ultralight', sans-serif;
     font-size: 16px;
     line-height: 1.4;
-    background: linear-gradient(to bottom, #000000, #000000);
-    color: #333 !important;
+    background: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+    color: #000; /* Text color */
+    padding: 20px; /* Global padding */
+}
+
+/* Search bar styles */
+.search-bar {
+    border: 1px solid #ff0000; /* Red border */
+    border-radius: 100px; /* Rounded corners */
+    padding: 10px; /* Padding inside the search bar */
+    width: 100%; /* Full width */
+    max-width: 400px; /* Max width for better layout */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    transition: border-color 0.3s ease; /* Smooth border color change */
+}
+
+.search-bar:focus {
+    border-color: #007aff; /* Change border color on focus */
+    outline: none; /* Remove default outline */
 }
 
 /* Headline styles */
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'SF Pro Display Medium', 'SF Pro Text Ultralight', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    font-weight: 700;
+    font-family: 'SF Pro Display Medium', sans-serif;
+    font-weight: 700; /* Bold headlines */
 }
 
-/* Paragraph text */
+/* Paragraph styles */
 p {
-    font-family: 'SF Pro Text Light', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    font-weight: 200;
+    font-family: 'SF Pro Text Light', sans-serif;
+    color: #666; /* Darker gray for better readability */
 }
 
-
-
-/* Container with full width */
+/* Utility classes */
 .container-fluid {
-    background: linear-gradient(to bottom, #000000, #000000); /* Set both colors to black */
-    padding: 0; /* Remove default padding if needed */
+    background: rgba(0, 0, 0, 0.1); /* Light background for containers */
+    padding: 20px; /* Padding for containers */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Shadow for depth */
 }
 
 /* Required field indicator */
 .required:after {
-    content: " *";
-    color: red;
-}
-
-/* Google Maps container */
-.google-maps {
-    position: relative;
-    padding-bottom: 75%;
-    height: 0;
-    overflow: hidden;
-}
-
-.google-maps iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100% !important;
-    height: 100% !important;
-}
-
-/* Social media backgrounds */
-.bg-facebook {
-    background-color: #3b5998;
-}
-
-.bg-twitter {
-    background-color: #1da1f2;
-}
-
-.bg-google {
-    background-color: #ea4335;
-}
-
-.bg-instagram {
-    background-color: #e1306c;
-}
-
-/* Background size */
-.bs-cover {
-    background-size: cover;
-}
-
-/* Utility classes */
-.r-0 {
-    right: 0;
-}
-
-.mw-180 {
-    max-width: 180px;
-}
-
-.mw-140 {
-    max-width: 140px;
-}
-
-.i-va {
-    vertical-align: -0.125em;
-}
-
-/* Ricki Apple Background Style - Main Background Colour */
-/* ===================================================== */
-.ricki-apple-bg {
-    background: linear-gradient(to bottom, #231b1b, #b2aaaa);
-    color: #333;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-}
-
-/* Ricki Apple Glass-Effect Style - GLOBAL */
-/* ======================================= */
-.ricki-glass-effect {
-    background: rgba(255, 255, 255, 0.12); /* Slightly less opaque background for a softer look */
-    backdrop-filter: blur(18px); /* Strong blur effect for glass appearance */
-    -webkit-backdrop-filter: blur(18px); /* For Safari with consistent blur */
-    border-radius: 12px; /* Rounded corners with moderate size */
-    padding: 18px; /* Adequate padding for content */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12); /* Less pronounced shadow to avoid floating effect */
-    border: 1px solid rgba(255, 255, 255, 0.15); /* Light border to maintain the glass effect */
-    transition: background 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
-}
-
-/* Ricki Apple fade-in Style - GLOBAL */
-/* ================================== */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Apply fade-in animation to elements */
-.ricki-fade-in {
-    opacity: 0; /* Initial state is invisible */
-    transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
-}
-
-.ricki-fade-in.visible {
-    opacity: 1; /* Visible state */
-    animation: fadeIn 1.5s ease-in-out forwards; /* Use animation to fade in */
-}
-
-/* Accordion button */
-.accordion-icon-button {
-    display: flex;
-    border-radius: inherit;
-}
-
-.accordion-icon-button:not(.collapsed)::after {
-    background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2016%2016'%20fill%3D'%23%7B%24accordion-icon-color%7D'%3E%3Cpath%20fill-rule%3D'evenodd'%20d%3D'M1.646%204.646a.5.5%200%200%201%20.708%200L8%2010.293l5.646-5.647a.5.5%200%200%201%20.708.708l-6%206a.5.5%200%200%201-.708%200l-6-6a.5.5%200%200%201%200-.708z'%2F%3E%3C%2Fsvg%3E");
-    transform: rotate(-180deg);
-    background-position-y: center;
-}
-
-.accordion-icon-button::after {
-    flex-shrink: 0;
-    background-position-y: center;
-    width: 20px;
-    margin-left: auto;
-    content: "";
-    background-image: url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2016%2016'%20fill%3D'%23%7B%24accordion-icon-active-color%7D'%3E%3Cpath%20fill-rule%3D'evenodd'%20d%3D'M1.646%204.646a.5.5%200%200%201%20.708%200L8%2010.293l5.646-5.647a.5.5%200%200%201%20.708.708l-6%206a.5.5%200%200%201-.708%200l-6-6a.5.5%200%200%201%200-.708z'%2F%3E%3C%2Fsvg%3E");
-    background-repeat: no-repeat;
-    background-size: 1.25rem;
-    transition: transform .2s ease-in-out;
-}
-
-.accordion-icon-button.collapsed {
-    border-bottom: none;
+    content: " *"; /* Indicate required fields */
+    color: #e74c3c; /* Red for required fields */
 }
