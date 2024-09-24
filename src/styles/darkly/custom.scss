@@ -1,0 +1,32 @@
+// /Users/xeon2035/Documents/LOCALDEV/softWEAR/CFXR/src/styles/custom.scss
+
+// Import Bootstrap and Bootswatch Darkly theme
+@import '~bootstrap/scss/bootstrap';
+@import '../darkly/_bootswatch';
+
+// Override any Bootstrap variables or styles here
+$primary: #yourCustomColor; // Example: change primary color
+$body-bg: #yourBackgroundColor; // Example: change body background
+$text-color: #yourTextColor; // Example: change text color
+
+// Custom styles
+// /Users/xeon2035/Documents/LOCALDEV/softWEAR/CFXR/src/styles/custom.scss
+
+// Override any Bootstrap variables or styles here
+$primary: #yourCustomColor; // Example: change primary color
+$body-bg: #111111; // Example: change body background
+$text-color: #yourTextColor; // Example: change text color
+
+// Custom styles
+body {
+  background-color: $body-bg;
+  color: $text-color;
+}
+// Buttons
+$btn-primary-bg: #afa82b; // Change the background color for primary buttons
+$btn-primary-border: #007bff; // Change the border color for primary buttons
+$btn-primary-color: #000; // Change the text color for primary buttons
+
+$btn-secondary-bg: #960e5a; // Change the background color for secondary buttons
+$btn-secondary-border: #e00000; // Change the border color for secondary buttons
+$btn-secondary-color: #fc0000; // Change the text color for secondary buttons

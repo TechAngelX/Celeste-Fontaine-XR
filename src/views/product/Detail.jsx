@@ -1,6 +1,6 @@
 import { lazy } from "react";
 import { data } from "../../data";
-import '../../styles/index.css';
+import '../../styles/darkly/custom.scss';
 
 
 const CardFeaturedProduct = lazy(() =>

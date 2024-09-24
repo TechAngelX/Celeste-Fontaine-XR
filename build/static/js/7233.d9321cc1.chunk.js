@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunke_commerce_template=self.webpackChunke_commerce_template||[]).push([[7233],{7233:function(e,c,n){n.r(c);n(2791);var t=n(184);c.default=function(){return(0,t.jsx)("div",{className:"container",children:(0,t.jsx)("h1",{children:"Women's Clothing"})})}}}]);
+//# sourceMappingURL=7233.d9321cc1.chunk.js.map

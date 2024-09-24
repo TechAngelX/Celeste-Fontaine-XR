@@ -1,11 +1,12 @@
-import 'bootswatch/dist/darkly/bootstrap.min.css';
+// import 'bootswatch/dist/darkly/bootstrap.min.css';
+
 import React from "react";
 import ReactDOM from "react-dom/client";
 // import './styles/index.css';
 import './styles/index.scss';
 
 import App from "./App";
-import * as serviceWorker from "./serviceWorker";
+import * as serviceWorker from "./server/serviceWorker";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
 import rootReducer from "./reducers";
