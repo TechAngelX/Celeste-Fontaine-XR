@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const oracledb = require('oracledb');
+const bcrypt = require('bcrypt'); // Import bcrypt
 
 // Handle database connection errors
 const dbConfig = {
@@ -15,6 +16,7 @@ router.post('/signup', async (req, res) => {
 
     // Hash the password
     const hashedPassword = await bcrypt.hash(password, 10);
+    const accType = 1;
 
     // Basic validation
     if (!firstName || !lastName || !email || !password) {
@@ -25,12 +27,19 @@ router.post('/signup', async (req, res) => {
         // Get a connection
         const connection = await oracledb.getConnection(dbConfig);
 
-        // Insert user into database
+        // Insert user into the database
         const result = await connection.execute(
-            `INSERT INTO USER_ACC (UNAME, FNAME, LNAME, EMAIL, PWORD) 
-       VALUES (:username, :firstName, :lastName, :email, :hashedPassword)`,
-            { username, firstName, lastName, email, hashedPassword }, // Ensure you hash the password before storing it
-            { autoCommit: true }
+            `INSERT INTO USER_ACC (UNAME, PWORD, FNAME, LNAME, EMAIL, ACCTYPE, CREATED, MODIFIED)
+             VALUES (:userName, :hashedPassword, :firstName, :lastName, :email, :accType, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)`,
+            {
+                userName: email, // Assuming username is the email
+                hashedPassword: hashedPassword,
+                firstName: firstName,
+                lastName: lastName,
+                email: email,
+                accType: accType,  // Use the variable directly
+                autoCommit: true
+            }
         );
 
         // Close the connection

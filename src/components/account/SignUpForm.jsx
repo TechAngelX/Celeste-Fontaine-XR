@@ -1,114 +1,145 @@
-import React from 'react';
+import React from "react";
 import { Field, reduxForm } from "redux-form";
 import { compose } from "redux";
 import { Link } from "react-router-dom";
 import renderFormGroupField from "../../helpers/renderFormGroupField";
-import renderFormField from "../../helpers/renderFormField";
-import '../../styles/index.css';
-import { ReactComponent as IconPhone } from "bootstrap-icons/icons/phone.svg";
+import {
+  required,
+  maxLength20,
+  minLength8,
+  email,
+} from "../../helpers/validation";
+import { ReactComponent as IconUser } from "bootstrap-icons/icons/person.svg";
 import { ReactComponent as IconShieldLock } from "bootstrap-icons/icons/shield-lock.svg";
+import { ReactComponent as IconEnvelope } from "bootstrap-icons/icons/envelope.svg";
 
-// Import validation helpers
-import { required, maxLength30, minLength8, email } from "../../helpers/validation";
+// Helper function to render a field
+const renderField = ({ name, type, label, placeholder, icon, validate, required, className }) => (
+    <Field
+        name={name}
+        type={type}
+        label={label}
+        component={renderFormGroupField}
+        placeholder={placeholder}
+        icon={icon}
+        validate={validate}
+        required={required}
+        className={className}
+    />
+);
 
-// Define the SignUpForm component
-const SignUpForm = (props) => {
-  const { handleSubmit, submitting, onSubmit, submitFailed } = props;
+// onSubmit function to handle form submission
+const onSubmit = async (formData) => {
+  try {
+    const response = await fetch('/api/signup', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    });
 
-  return (
-      <form
-          onSubmit={handleSubmit(onSubmit)}
-          className={`needs-validation ${submitFailed ? "was-validated" : ""}`}
-          noValidate
-      >
-        <div className="main-container">
-          <div className="col-md-6">
-            <Field
-                name="firstName"
-                type="text"
-                label="First Name"
-                component={renderFormField}
-                placeholder="First Name"
-                validate={[required, maxLength30]}
-                required={true}
-            />
-          </div>
-          <div className="col-md-6">
-            <Field
-                name="lastName"
-                type="text"
-                label="Last Name"
-                component={renderFormField}
-                placeholder="Last Name"
-                validate={[required, maxLength30]}
-                required={true}
-            />
-          </div>
-        </div>
-        <Field
-            name="email"
-            type="email"
-            label="Email Address"
-            component={renderFormGroupField}
-            placeholder="Email Address"
-            validate={[required, email]}
-            required={true}
-            className="mb-3"
-        />
-        <Field
-            name="password"
-            type="password"
-            label="Your password"
-            component={renderFormGroupField}
-            placeholder="******"
-            icon={IconShieldLock}
-            validate={[required, minLength8]}
-            required={true}
-            className="mb-3"
-        />
-        <div className="d-grid">
-          <button
-              type="submit"
-              className="btn btn-primary mb-3"
-              disabled={submitting}
-          >
-            Create
-          </button>
-        </div>
-        <Link className="float-start" to="/account/signin" title="Sign In">
-          Sign In
-        </Link>
-        <Link
-            className="float-end"
-            to="/account/forgotpassword"
-            title="Forgot Password"
-        >
-          Forgot password?
-        </Link>
-        <div className="clearfix"></div>
-        <hr />
-        <div className="row">
-          <div className="col text-center">
-            <p className="text-muted small">Or you can join with</p>
-          </div>
-          <div className="col text-center">
-            <Link to="/" className="btn btn-light text-white bg-twitter me-3">
-              <i className="bi bi-twitter-x" />
-            </Link>
-            <Link to="/" className="btn btn-light text-white me-3 bg-facebook">
-              <i className="bi bi-facebook mx-1" />
-            </Link>
-            <Link to="/" className="btn btn-light text-white me-3 bg-google">
-              <i className="bi bi-google mx-1" />
-            </Link>
-          </div>
-        </div>
-      </form>
-  );
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData.error || 'Signup failed');
+    }
+
+    // Handle successful signup (e.g., redirect to login)
+    console.log('User signed up successfully');
+  } catch (error) {
+    console.error(error);
+    // Optionally set error state to show on the UI
+  }
 };
+
+const SignInForm = ({ handleSubmit, submitting, submitFailed }) => (
+    <form
+        onSubmit={handleSubmit(onSubmit)}
+        className={`needs-validation ${submitFailed ? "was-validated" : ""}`}
+        noValidate
+    >
+      {renderField({
+        name: "firstName",
+        type: "text",
+        label: "First Name",
+        placeholder: "Enter your first name",
+        icon: IconUser,
+        validate: [required],
+        required: true,
+        className: "mb-3",
+      })}
+
+      {renderField({
+        name: "lastName",
+        type: "text",
+        label: "Last Name",
+        placeholder: "Enter your last name",
+        icon: IconUser,
+        validate: [required],
+        required: true,
+        className: "mb-3",
+      })}
+
+      {renderField({
+        name: "email",
+        type: "email",
+        label: "Email",
+        placeholder: "Enter your email",
+        icon: IconEnvelope,
+        validate: [required, email],
+        required: true,
+        className: "mb-3",
+      })}
+
+      {renderField({
+        name: "password",
+        type: "password",
+        label: "Your Password",
+        placeholder: "******",
+        icon: IconShieldLock,
+        validate: [required, maxLength20, minLength8],
+        required: true,
+        className: "mb-3",
+      })}
+
+      <div className="d-grid">
+        <button
+            type="submit"
+            className="btn btn-primary mb-3"
+            disabled={submitting}
+        >
+          Sign Up
+        </button>
+      </div>
+
+      <Link className="float-start" to="/account/signin" title="Log In">
+        Already have an account? Log In
+      </Link>
+
+      <div className="clearfix"></div>
+      <hr />
+
+      <div className="row">
+        <div className="col text-center">
+          <p className="text-muted small">Or you can join with</p>
+        </div>
+        <div className="col text-center">
+          <Link to="/" className="btn btn-light text-white bg-twitter me-3">
+            <i className="bi bi-twitter-x" />
+          </Link>
+          <Link to="/" className="btn btn-light text-white me-3 bg-facebook">
+            <i className="bi bi-facebook mx-1" />
+          </Link>
+          <Link to="/" className="btn btn-light text-white me-3 bg-google">
+            <i className="bi bi-google mx-1" />
+          </Link>
+        </div>
+      </div>
+    </form>
+);
 
 export default compose(
     reduxForm({
-      form: "signup",
+      form: "signin",
     })
-)(SignUpForm);
+)(SignInForm);
