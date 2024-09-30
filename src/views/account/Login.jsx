@@ -2,9 +2,9 @@ import { lazy } from "react";
 import { Link } from "react-router-dom";
 import '../../styles/index.css';
 
-const SignInForm = lazy(() => import("../../components/account/SignInForm"));
+const SignInForm = lazy(() => import("../../components/account/LoginForm"));
 
-const SignInView = () => {
+const LoginView = () => {
   const onSubmit = async (values) => {
     alert(JSON.stringify(values));
   };
@@ -14,14 +14,14 @@ const SignInView = () => {
         <div className="col-md-6 bg-light bg-gradient p-3 d-none d-md-block">
           <Link to="/">
             <img
-              src="../../images/banner/Dell.webp"
+              src="/images/banner/Dell.webp"
               alt="..."
               className="img-fluid"
             />
           </Link>
           <Link to="/">
             <img
-              src="../../images/banner/Laptops.webp"
+              src="/images/banner/Laptops.webp"
               alt="..."
               className="img-fluid"
             />
@@ -36,4 +36,4 @@ const SignInView = () => {
   );
 };
 
-export default SignInView;
+export default LoginView;

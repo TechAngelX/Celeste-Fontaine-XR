@@ -1,8 +1,23 @@
 const express = require('express');
 const path = require('path');
+const dotenv = require('dotenv');
+const fs = require('fs');
+const configPath = require('../config/configPath');
+const signUpAuthRoutes = require('./RegisterAuth');
+
 const app = express();
 
+// Load environment variables from config file
+const envFilePath = configPath.envPath;
+if (fs.existsSync(envFilePath)) {
+    dotenv.config({ path: envFilePath });
+} else {
+    console.error('Environment file not found:', envFilePath);
+    process.exit(1);
+}
 
+// Middleware to parse JSON bodies
+app.use(express.json());
 
 // Serve static files (e.g., images, CSS, JavaScript)
 app.use(express.static(path.join(__dirname, '../public')));
@@ -35,9 +50,8 @@ app.get('/', (req, res) => {
     res.render('home', { data });
 });
 
-// Serve the React application (assuming React build files are in `client/build`)
-app.use(express.static(path.join(__dirname, '../client/build')));
-console.log('Serving React app from ../client/build');
+// Route for signup
+app.use('/', RegisterAuthRoutes); // This will make the signup route available at /api/signup
 
 // Handle React routing, return the main HTML file
 app.get('*', (req, res) => {

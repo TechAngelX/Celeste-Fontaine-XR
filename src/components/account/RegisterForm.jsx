@@ -30,6 +30,7 @@ const renderField = ({ name, type, label, placeholder, icon, validate, required,
 
 // onSubmit function to handle form submission
 const onSubmit = async (formData) => {
+  console.log("Form submitted:", formData);
   try {
     const response = await fetch('/api/signup', {
       method: 'POST',
@@ -39,16 +40,20 @@ const onSubmit = async (formData) => {
       body: JSON.stringify(formData),
     });
 
+    console.log('Response status:', response.status); // Log the response status
+
     if (!response.ok) {
       const errorData = await response.json();
-      throw new Error(errorData.error || 'Signup failed');
+      console.error('Signup failed:', errorData.error);
+      // You can display an error message to the user here if needed
+      return; // Exit the function on error
     }
 
-    // Handle successful signup (e.g., redirect to login)
     console.log('User signed up successfully');
+    // Optionally redirect or show a success message here
   } catch (error) {
-    console.error(error);
-    // Optionally set error state to show on the UI
+    console.error('Error in signup process:', error.message);
+
   }
 };
 

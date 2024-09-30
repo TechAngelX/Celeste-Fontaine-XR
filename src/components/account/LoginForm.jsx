@@ -1,7 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Field, reduxForm } from "redux-form";
 import { compose } from "redux";
-import { Link } from "react-router-dom";
 import renderFormGroupField from "../../helpers/renderFormGroupField";
 import {
   required,
@@ -14,7 +14,7 @@ import {
 import { ReactComponent as IconPhone } from "bootstrap-icons/icons/phone.svg";
 import { ReactComponent as IconShieldLock } from "bootstrap-icons/icons/shield-lock.svg";
 
-const SignInForm = (props) => {
+const LoginForm = (props) => {
   const { handleSubmit, submitting, onSubmit, submitFailed } = props;
   return (
     <form
@@ -57,7 +57,7 @@ const SignInForm = (props) => {
           Log In
         </button>
       </div>
-      <Link className="float-start" to="/account/signup" title="Sign Up">
+      <Link className="float-start" to="/account/login" title="Sign Up">
         Create your account
       </Link>
       <Link
@@ -93,4 +93,4 @@ export default compose(
   reduxForm({
     form: "signin",
   })
-)(SignInForm);
+)(LoginForm);

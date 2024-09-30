@@ -41,10 +41,10 @@ const ForgotPasswordForm = (props) => {
           Submit
         </button>
       </div>
-      <Link className="float-start" to="/account/signup" title="Sign Up">
+      <Link className="float-start" to="/account/register" title="Sign Up">
         Create your account
       </Link>
-      <Link className="float-end" to="/account/signin" title="Sign In">
+      <Link className="float-end" to="/account/login" title="Sign In">
         Sign In
       </Link>
     </form>

@@ -34,12 +34,12 @@ const TopMenu = () => {
               </button>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li>
-                  <Link className="dropdown-item" to="/account/signin">
+                  <Link className="dropdown-item" to="/account/login">
                     Sign In
                   </Link>
                 </li>
                 <li>
-                  <Link className="dropdown-item" to="/account/signup">
+                  <Link className="dropdown-item" to="/account/register">
                     Sign Up
                   </Link>
                 </li>

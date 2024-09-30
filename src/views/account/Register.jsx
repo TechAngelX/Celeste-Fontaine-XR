@@ -2,7 +2,7 @@ import { lazy } from "react";
 import { Link } from "react-router-dom";
 import '../../styles/index.css';
 
-const SingUpForm = lazy(() => import("../../components/account/SignUpForm"));
+const SingUpForm = lazy(() => import("../../components/account/RegisterForm"));
 
 const SignUpView = () => {
   const onSubmit = async (values) => {

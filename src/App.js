@@ -7,12 +7,13 @@ import TopMenu from "./components/TopMenu";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
+
 import "./styles/App.css";
 
 // Lazy load your views
 const HomeView = lazy(() => import("./pages/Home"));
-const SignInView = lazy(() => import("./views/account/SignIn"));
-const SignUpView = lazy(() => import("./views/account/SignUp"));
+const LoginView = lazy(() => import("./views/account/Login"));
+const RegisterView = lazy(() => import("./views/account/Register"));
 const ForgotPasswordView = lazy(() => import("./views/account/ForgotPassword"));
 const OrdersView = lazy(() => import("./views/account/Orders"));
 const WishlistView = lazy(() => import("./views/account/Wishlist"));
@@ -60,8 +61,8 @@ function App() {
                         <Route path="/women" element={<WomenView />} />
                         <Route path="/" element={<CelesteFontaine />} /> {/* Landing page */}
                         <Route path="/home" element={<HomeView />} /> {/* Your home page */}
-                        <Route path="/account/signin" element={<SignInView />} />
-                        <Route path="/account/signup" element={<SignUpView />} />
+                        <Route path="/account/login" element={<LoginView />} />
+                        <Route path="/account/register" element={<RegisterView />} />
                         <Route path="/account/forgotpassword" element={<ForgotPasswordView />} />
                         <Route path="/account/profile" element={<MyProfileView />} />
                         <Route path="/account/orders" element={<OrdersView />} />
