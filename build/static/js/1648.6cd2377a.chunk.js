@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkcfxr_website=self.webpackChunkcfxr_website||[]).push([[1648],{1648:function(e,s,c){c.r(s);c(2791);var n=c(1087),a=(c(9174),c(184));s.default=function(e){return(0,a.jsx)("div",{className:"card shadow-sm ".concat(e.className),children:(0,a.jsxs)("div",{className:"card-body text-center",children:[(0,a.jsx)("h5",{className:"card-title",children:"Sign in for your best experience"}),(0,a.jsx)(n.rU,{to:"/account/signin",className:"btn btn-warning",children:"Sign in securely"})]})})}}}]);
+//# sourceMappingURL=1648.6cd2377a.chunk.js.map

@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkcfxr_website=self.webpackChunkcfxr_website||[]).push([[3559],{3559:function(e,n,s){s.r(n);s(2791);var c=s(184);n.default=function(){return(0,c.jsx)("div",{className:"container",children:(0,c.jsx)("h1",{children:"Men's Clothing"})})}}}]);
+//# sourceMappingURL=3559.0b6a3413.chunk.js.map

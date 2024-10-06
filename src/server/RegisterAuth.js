@@ -1,11 +1,13 @@
+// noinspection SqlInsertValues
+
 const express = require('express');
 const oracledb = require('oracledb'); // Ensure oracledb is installed
 const config = require('/Users/xeon2035/Documents/LOCALDEV/softWEAR/CFXR/src/config/configPath'); // Import the config file
 
 const router = express.Router();
 
-// Function to insert user into the MYNAMEIS table
-const insertUser = async (firstName) => {
+// Function to insert user into the USER_ACC table
+const insertAccUser = async (uName, fName, lName, pWord, eMail, accType) => {
     let connection;
 
     try {
@@ -19,12 +21,17 @@ const insertUser = async (firstName) => {
         console.log('Database connection established successfully.');
 
         const sql = `
-            INSERT INTO MYNAMEIS (FNAME, CREATED, MODIFIED)
-            VALUES (:firstName, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
+            INSERT INTO USER_ACC (UNAME, FNAME, LNAME, PWORD, EMAIL, ACCTYPE, CREATED, MODIFIED)
+            VALUES (:uName, :fName, :lName, :pWord, :eMail, :accType, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
         `;
 
         const binds = {
-            firstName
+            uName,
+            fName,
+            lName,
+            pWord,
+            eMail,
+            accType
         };
 
         console.log('Executing SQL:', sql);
@@ -52,20 +59,20 @@ const insertUser = async (firstName) => {
 
 // Route for user signup
 router.post('/register', async (req, res) => {
-    const { firstName } = req.body; // Only taking firstName as per the schema
+    const { uName, firstName, lastName, pWord, email, accType } = req.body; // Extracting all necessary fields
 
     console.log("Signup request received:", req.body);
 
     // Basic validation
-    if (!firstName) {
-        console.error('Validation error: First name is required.');
-        return res.status(400).json({ error: 'First name is required.' });
+    if (!uName || !firstName || !lastName || !pWord || !email || !accType) {
+        console.error('Validation error: All fields are required.');
+        return res.status(400).json({ error: 'All fields are required.' });
     }
 
     try {
         console.log('Inserting user into the database...');
-        // Insert the user's first name into the MYNAMEIS table
-        await insertUser(firstName);
+        // Insert the user's details into the USER_ACC table
+        await insertAccUser(uName, firstName, lastName, pWord, email, accType);
         console.log('User created successfully!');
 
         return res.status(201).json({ message: 'User created successfully!' });
