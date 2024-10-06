@@ -1,57 +1,54 @@
-// noinspection SqlInsertValues
-
 const express = require('express');
-const oracledb = require('oracledb'); // Ensure oracledb is installed
-const config = require('/Users/xeon2035/Documents/LOCALDEV/softWEAR/CFXR/src/config/configPath'); // Import the config file
+const oracledb = require('oracledb');
+const config = require('/Users/xeon2035/Documents/LOCALDEV/softWEAR/CFXR/src/config/configPath'); // Adjust path to match your project
 
 const router = express.Router();
 
+// Function to generate username based on first and last names
+const generateUName = (firstName, lastName) => {
+    const firstInitial = firstName.charAt(0).toLowerCase();
+    const lastFiveChars = lastName.substring(0, 5).toLowerCase();
+    const randomNumbers = Math.floor(100 + Math.random() * 900);
+    return `${firstInitial}${lastFiveChars}${randomNumbers}`;
+};
+
 // Function to insert user into the USER_ACC table
-const insertAccUser = async (uName, fName, lName, pWord, eMail, accType) => {
+const insertAccUser = async (uName, firstName, lastName, pWord, email, accType) => {
     let connection;
 
     try {
-        // Establish a database connection using the config values
         console.log('Attempting to connect to the database...');
         connection = await oracledb.getConnection({
-            user: config.dbUser, // Your DB username
-            password: config.dbPassword, // Your DB password
-            connectionString: config.dbConnectionString // Your DB connection string
+            user: config.dbUser,
+            password: config.dbPassword,
+            connectionString: config.dbConnectionString
         });
         console.log('Database connection established successfully.');
 
         const sql = `
             INSERT INTO USER_ACC (UNAME, FNAME, LNAME, PWORD, EMAIL, ACCTYPE, CREATED, MODIFIED)
-            VALUES (:uName, :fName, :lName, :pWord, :eMail, :accType, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
+            VALUES (:uName, :firstName, :lastName, :pWord, :email, :accType, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
         `;
 
-        const binds = {
-            uName,
-            fName,
-            lName,
-            pWord,
-            eMail,
-            accType
-        };
+        const binds = { uName, firstName, lastName, pWord, email, accType };
 
         console.log('Executing SQL:', sql);
         console.log('With binds:', binds);
 
         await connection.execute(sql, binds);
-        console.log('SQL executed successfully, committing transaction...');
-        await connection.commit(); // Commit the transaction
-        console.log('Transaction committed successfully.');
+        await connection.commit();
+        console.log('User created and transaction committed.');
 
     } catch (err) {
-        console.error('Database insert error:', err);
-        throw err; // Rethrow the error to handle it in the route
+        console.error('Database error:', err);
+        throw err;
     } finally {
         if (connection) {
             try {
-                await connection.close(); // Close the connection
+                await connection.close();
                 console.log('Database connection closed.');
             } catch (err) {
-                console.error('Error closing the connection:', err);
+                console.error('Error closing connection:', err);
             }
         }
     }
@@ -59,22 +56,17 @@ const insertAccUser = async (uName, fName, lName, pWord, eMail, accType) => {
 
 // Route for user signup
 router.post('/register', async (req, res) => {
-    const { uName, firstName, lastName, pWord, email, accType } = req.body; // Extracting all necessary fields
+    const { firstName, lastName, pWord, email, accType } = req.body;
 
-    console.log("Signup request received:", req.body);
-
-    // Basic validation
-    if (!uName || !firstName || !lastName || !pWord || !email || !accType) {
+    if (!firstName || !lastName || !pWord || !email || !accType) {
         console.error('Validation error: All fields are required.');
         return res.status(400).json({ error: 'All fields are required.' });
     }
 
-    try {
-        console.log('Inserting user into the database...');
-        // Insert the user's details into the USER_ACC table
-        await insertAccUser(uName, firstName, lastName, pWord, email, accType);
-        console.log('User created successfully!');
+    const uName = generateUName(firstName, lastName);
 
+    try {
+        await insertAccUser(uName, firstName, lastName, pWord, email, accType);
         return res.status(201).json({ message: 'User created successfully!' });
     } catch (err) {
         console.error('Error in signup route:', err);
