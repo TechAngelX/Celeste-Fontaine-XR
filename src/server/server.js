@@ -1,4 +1,6 @@
 const express = require('express');
+const cors = require('cors');
+
 const path = require('path');
 const dotenv = require('dotenv');
 const fs = require('fs');
@@ -19,6 +21,13 @@ if (fs.existsSync(envFilePath)) {
     process.exit(1);
 }
 
+// MIDDLEWARE
+// Enable CORS for all routes
+app.use(cors({
+    origin: 'http://localhost:3000', // Allow your frontend origin
+    methods: 'GET,POST,PUT,DELETE', // Specify allowed methods
+    credentials: true // Allow credentials if needed
+}));
 // Middleware to parse JSON bodies
 app.use(express.json());
 
