@@ -58,10 +58,10 @@ const insertAccUser = async (uName, firstName, lastName, pWord, email, accType) 
 router.post('/register', async (req, res) => {
     const { firstName, lastName, pWord, email, accType } = req.body;
 
-    if (!firstName || !lastName || !pWord || !email || !accType) {
-        console.error('Validation error: All fields are required.');
-        return res.status(400).json({ error: 'All fields are required.' });
-    }
+    // if (!firstName || !lastName || !pWord || !email || !accType) {
+    //     console.error('Validation error: All fields are required.');
+    //     return res.status(400).json({ error: 'All fields are required.' });
+    // }
 
     const uName = generateUName(firstName, lastName);
 

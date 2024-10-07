@@ -6,6 +6,7 @@ import renderFormGroupField from "../../helpers/renderFormGroupField";
 import { ReactComponent as IconUser } from "bootstrap-icons/icons/person.svg";
 import { ReactComponent as IconShieldLock } from "bootstrap-icons/icons/shield-lock.svg";
 import { ReactComponent as IconEnvelope } from "bootstrap-icons/icons/envelope.svg";
+import { required, maxLength20, minLength8, email } from "../../helpers/validation";
 
 // Helper function to render a field
 const renderField = ({
@@ -85,7 +86,7 @@ const RegisterForm = ({ handleSubmit, submitting, submitFailed }) => {
           label: "First Name",
           placeholder: "Enter your first name",
           icon: IconUser,
-          // validate: [required], // Validation function for first name
+          validate: [required], // Validation function for first name
           required: true,
           className: "mb-3",
         })}
@@ -96,7 +97,7 @@ const RegisterForm = ({ handleSubmit, submitting, submitFailed }) => {
           label: "Last Name",
           placeholder: "Enter your last name",
           icon: IconUser,
-          // validate: [required], // Validation function for last name
+          validate: [required], // Validation function for last name
           required: true,
           className: "mb-3",
         })}
@@ -118,7 +119,7 @@ const RegisterForm = ({ handleSubmit, submitting, submitFailed }) => {
           label: "Your Password",
           placeholder: "******",
           icon: IconShieldLock,
-          // validate: [required, maxLength20, minLength8], // Validation functions for password
+          validate: [required, minLength8, maxLength20], // Validation functions for password
           required: true,
           className: "mb-3",
         })}
