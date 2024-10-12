@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ricki IWT Test</title>
+</head>
+<body>
+<h1>Ricki Test</h1>
+
+<script type="text/javascript">
+    let num1 = parseInt(prompt("Enter the first integer:", ""), 10);
+    let num2 = parseInt(prompt("Enter the second integer:", ""), 10);
+
+    let larger;
+    if (num1 > num2) {
+        larger = num1;
+    } else if (num2 > num1) {
+        larger = num2;
+    } else {
+        larger = "neither, both are equal";
+    }
+
+    document.write("<p>The larger of " + num1 + " and " + num2 + " is " + larger + "</p>");
+</script>
+</body>
+</html>

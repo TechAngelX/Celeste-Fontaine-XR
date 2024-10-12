@@ -1,6 +1,9 @@
+const jwt = require('jsonwebtoken');
 const express = require('express');
 const oracledb = require('oracledb');
+const bcrypt = require('bcrypt'); // Import bcrypt for password hashing
 const config = require('/Users/xeon2035/Documents/LOCALDEV/softWEAR/CFXR/src/config/configPath'); // Adjust path to match your project
+const { sendVerificationEmail } = require('./emailService'); // Import the email service
 
 const router = express.Router();
 
@@ -58,16 +61,30 @@ const insertAccUser = async (uName, firstName, lastName, pWord, email, accType) 
 router.post('/register', async (req, res) => {
     const { firstName, lastName, pWord, email, accType } = req.body;
 
-    // if (!firstName || !lastName || !pWord || !email || !accType) {
-    //     console.error('Validation error: All fields are required.');
-    //     return res.status(400).json({ error: 'All fields are required.' });
-    // }
+    // Optional: Uncomment to validate required fields
+    if (!firstName || !lastName || !pWord || !email || !accType) {
+        console.error('Validation error: All fields are required.');
+        return res.status(400).json({ error: 'All fields are required.' });
+    }
 
     const uName = generateUName(firstName, lastName);
 
     try {
-        await insertAccUser(uName, firstName, lastName, pWord, email, accType);
-        return res.status(201).json({ message: 'User created successfully!' });
+        // Hash the password before storing it
+        const hashedPassword = await bcrypt.hash(pWord, 10);
+
+        await insertAccUser(uName, firstName, lastName, hashedPassword, email, accType);
+
+        // Generate a JWT token for email verification
+        const token = jwt.sign({ email }, process.env.JWT_SECRET, { expiresIn: '1h' }); // Set expiration as needed
+
+        // Create a verification link with the token
+        const verificationLink = `http://localhost:3000/verify?token=${token}`;
+
+        // Send the verification email
+        await sendVerificationEmail(email, verificationLink);
+
+        return res.status(201).json({ message: 'User created successfully! Please verify your email.' });
     } catch (err) {
         console.error('Error in signup route:', err);
         return res.status(500).json({ error: 'Database error.' });

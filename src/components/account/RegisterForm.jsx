@@ -116,7 +116,7 @@ const RegisterForm = ({ handleSubmit, submitting, submitFailed }) => {
         {renderField({
           name: "password",
           type: "password",
-          label: "Your Password",
+          label: "Your Password (minimum 8 characters)",
           placeholder: "******",
           icon: IconShieldLock,
           validate: [required, minLength8, maxLength20], // Validation functions for password
