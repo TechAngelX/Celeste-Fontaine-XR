@@ -1,13 +1,11 @@
 import React, { Suspense, lazy } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.js";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import TopMenu from "./components/TopMenu";
+import NavBar from "./components/navBar";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-
-
 import "./styles/App.css";
 
 // Lazy load your views
@@ -33,8 +31,8 @@ const SupportView = lazy(() => import("./pages/Support"));
 const BlogView = lazy(() => import("./views/blog/Blog"));
 const BlogDetailView = lazy(() => import("./views/blog/Detail"));
 const CelesteFontaine = lazy(() => import("./components/CelesteFontaine"));
-const MenView = lazy(() => import("./views/Men")); // Adjusted path
-const WomenView = lazy(() => import("./views/Women")); // Adjusted path
+const MenView = lazy(() => import("./views/Men"));
+const WomenView = lazy(() => import("./views/Women"));
 
 // ErrorBoundary Component
 class ErrorBoundary extends React.Component {
@@ -49,11 +47,17 @@ class ErrorBoundary extends React.Component {
     }
 }
 
-function App() {
+function AppContent() {
+    const location = useLocation();
+
+    // Check if the current route is the CelesteFontaine page
+    const isCelesteFontainePage = location.pathname === "/";
+
     return (
-        <BrowserRouter>
-            <Header />
-            <TopMenu />
+        <>
+            {/* Only show Header if it's not the CelesteFontaine page */}
+            {!isCelesteFontainePage && <Header />}
+            <NavBar />
             <Suspense fallback={<div className="text-white text-center mt-3">Loading...</div>}>
                 <ErrorBoundary>
                     <Routes>
@@ -85,6 +89,14 @@ function App() {
                 </ErrorBoundary>
             </Suspense>
             <Footer />
+        </>
+    );
+}
+
+function App() {
+    return (
+        <BrowserRouter>
+            <AppContent />
         </BrowserRouter>
     );
 }

@@ -1,0 +1,159 @@
+/* General navbar styles */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent dark background */
+    padding: 1rem 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+.navbar-brand:hover {
+    color: #1abc9c; /* Change color on hover */
+}
+
+.navbar-toggler {
+    border: none;
+    color: #fff;
+    font-size: 1.25rem;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28155, 155, 155, 0.7%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Styling for navbar links */
+.nav-link, .dropdown-item {
+    color: #fff;
+    transition: color 0.2s;
+}
+
+.nav-link:hover, .dropdown-item:hover {
+    color: #1abc9c; /* Hover effect for links */
+}
+
+/* Dropdown menu styles */
+.dropdown-menu {
+    background-color: rgba(0, 0, 0, 0.9);
+    border: none;
+}
+
+.dropdown-item {
+    color: #fff;
+}
+
+.dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Divider within dropdown */
+.dropdown-divider {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Media query for mobile responsiveness */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem;
+    }
+
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+
+    .navbar-collapse {
+        background-color: rgba(0, 0, 0, 0.9);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .nav-link {
+        font-size: 1rem;
+    }
+
+    .dropdown-menu {
+        position: static;
+        float: none;
+    }
+}/* Dark mode toggle styles */
+.dark-mode-toggle {
+    display: flex;
+    align-items: center;
+    margin-left: 10px; /* Spacing from navbar items */
+    position: relative; /* Position context for children */
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px; /* Width of the toggle */
+    height: 34px; /* Height of the toggle */
+    margin-right: 10px; /* Space between switch and icon */
+}
+
+.switch input {
+    opacity: 0; /* Hide the checkbox */
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc; /* Default color */
+    transition: .4s; /* Smooth transition */
+    border-radius: 34px; /* Rounded corners */
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px; /* Height of the knob */
+    width: 26px; /* Width of the knob */
+    left: 4px; /* Position of the knob */
+    bottom: 4px; /* Position of the knob */
+    background-color: white; /* Color of the knob */
+    transition: .4s; /* Smooth transition for the knob */
+    border-radius: 50%; /* Round knob */
+}
+
+/* Image styles for the dark mode toggle */
+.icon {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 27%; /* Start near the left of the toggle */
+    transform: translate(-50%, -50%); /* Center it properly */
+    width: 27px; /* Adjust size */
+    height: 27px; /* Adjust size */
+    object-fit: cover; /* Maintain aspect ratio */
+    transition: left 0.4s; /* Smooth transition */
+}
+
+input:checked + .slider {
+    background-color: #2196F3; /* Color when checked */
+}
+
+input:checked + .slider:before {
+    transform: translateX(20px); /* Move knob to the right */
+}
+
+/* Move the icon with the slider */
+input:checked + .slider + .icon {
+    left: calc(100% - 25px); /* Adjust position based on the slider's width */
+}
