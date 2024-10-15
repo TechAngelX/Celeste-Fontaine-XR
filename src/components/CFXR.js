@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import '../styles/CFXR.css'; // Make sure to import your CSS file
 
 const CFXR = () => {
     const navigate = useNavigate();
@@ -7,15 +8,14 @@ const CFXR = () => {
     useEffect(() => {
         const timer = setTimeout(() => {
             navigate("/CelesteFontaine");
-        }, 3000);
+        }, 20000);
 
         return () => clearTimeout(timer);
     }, [navigate]);
 
     return (
-        <div className="cfxr-container">
-            <h1>Welcome to CFXR</h1>
-            <p>Loading the Celeste Fontaine experience...</p>
+        <div className="CFXR"> {/* Use the class name defined in your CSS */}
+            <img src="/images/hero/cfxr-logo-hero.svg" alt="CFXR Logo" className="CFXR-logo" /> {/* Use the class name defined in your CSS */}
         </div>
     );
 };

@@ -10,7 +10,7 @@
 .CFXR-logo {
     max-width: 50%;
     height: auto;
-    animation: fadeIn 1.5s ease-in-out;
+    animation: fadeIn 1.5s ease-in-out; /* Apply fade-in animation */
 }
 
 /* Optional fade-in animation */
