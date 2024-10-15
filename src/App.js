@@ -3,11 +3,11 @@ import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.js";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import CFXR from "./components/CFXR";
 import NavBar from "./components/NavBar";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import "./styles/App.css";
+import CFXR from "./components/CFXR";
 
 // Lazy load your views
 const HomeView = lazy(() => import("./pages/Home"));
@@ -50,22 +50,20 @@ class ErrorBoundary extends React.Component {
 
 function AppContent() {
     const location = useLocation();
-
-    // Check if the current route is the CelesteFontaine page
-    const isCelesteFontainePage = location.pathname === "/";
+    const isCFXRPage = location.pathname === "/";
 
     return (
         <>
-            {/* Only show Header if it's not the CelesteFontaine page */}
-            {!isCelesteFontainePage && <Header />}
-            <NavBar />
+            {!isCFXRPage && <Header />}
+            {!isCFXRPage && <NavBar />}
             <Suspense fallback={<div className="text-white text-center mt-3">Loading...</div>}>
                 <ErrorBoundary>
                     <Routes>
+                        <Route path="/" element={<CFXR />} />
+                        <Route path="/CelesteFontaine" element={<CelesteFontaine />} />
+                        <Route path="/home" element={<HomeView />} />
                         <Route path="/men" element={<MenView />} />
                         <Route path="/women" element={<WomenView />} />
-                        <Route path="/" element={<CelesteFontaine />} /> {/* Landing page */}
-                        <Route path="/home" element={<HomeView />} /> {/* Your home page */}
                         <Route path="/account/login" element={<LoginView />} />
                         <Route path="/account/register" element={<RegisterView />} />
                         <Route path="/account/forgotpassword" element={<ForgotPasswordView />} />
@@ -89,7 +87,7 @@ function AppContent() {
                     </Routes>
                 </ErrorBoundary>
             </Suspense>
-            <Footer />
+            {!isCFXRPage && <Footer />}
         </>
     );
 }
