@@ -1,0 +1,20 @@
+/* Style for the CelesteFontaine landing page */
+.CFXR {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full screen height */
+    background-color: black; /* Background color */
+}
+
+.CFXR-logo {
+    max-width: 50%;
+    height: auto;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Optional fade-in animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}

@@ -1,12 +1,51 @@
 /* General navbar styles */
 .navbar {
-    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent dark background */
+    background-color: transparent; /* Keep navbar transparent */
     padding: 1rem 2rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2); /* Soft white border */
     position: fixed;
     width: 100%;
     z-index: 1000;
-    transition: background-color 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out, border-bottom 0.3s ease-in-out; /* Smooth transitions */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Navbar links as block elements */
+.nav-item {
+    display: block; /* Make nav-item a block element */
+}
+
+/* Navbar links hover effect */
+.nav-link,
+.dropdown-item {
+    display: block; /* Make link take full width */
+    padding: 10px; /* Add padding for a larger clickable area */
+}
+
+/* Change background color on hover for navbar links */
+.nav-link:hover,
+.dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Light transparent background on hover */
+}
+
+/* Dark mode toggle button */
+.dark-mode-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Light transparent background on hover */
+}
+
+/* Dropdown menu styles */
+.dropdown-menu {
+    background-color: rgba(0, 0, 0, 0.9);
+    border: none;
+}
+
+.dropdown-item {
+    color: #fff;
+}
+
+/* Change background color on hover for dropdown items */
+.dropdown-item:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Light transparent background on hover */
 }
 
 .navbar-brand {
