@@ -1,11 +1,11 @@
 import React, { lazy } from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/landingPage.css';
+import '../styles/CFXR-2.css';
 import ThreeDViewer from './threeDViewer'; // Import your ThreeDViewer component here
 
 const CelesteFontaine = () => {
     return (
-        <div className="celeste-fontaine">
+        <div className="body">
             <a href="/" className="ricki-fade-in">Céleste Fontaine</a>
 
             <section className="section" id="section1">

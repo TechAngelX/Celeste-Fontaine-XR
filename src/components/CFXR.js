@@ -13,8 +13,8 @@ const CFXR = () => {
             setIsClicked(true); // Trigger fade-out
             setTimeout(() => {
                 navigate("/CelesteFontaine"); // Navigate after fade-out
-            }, 10000000000000); // Duration of the fade-out
-        }, 10000000000000); // Automatic fade-out timer
+            }, 122222000); // Duration of the fade-out
+        }, 122222000); // Automatic fade-out timer
 
         return () => clearTimeout(timer); // Cleanup timer
     }, [navigate]);
@@ -24,7 +24,7 @@ const CFXR = () => {
             setIsClicked(true); // Trigger fade-out
             setTimeout(() => {
                 navigate("/CelesteFontaine"); // Navigate after fade-out
-            }, 2000); // Wait for the fade-out to complete
+            }, 1000); // Wait for the fade-out to complete
         }
     };
 
@@ -35,7 +35,6 @@ const CFXR = () => {
             initial={{ opacity: 1 }}
             animate={{ opacity: isClicked ? 0 : 1 }} // Fade out if clicked
             transition={{ duration: 1 }} // Duration of the fade-out
-            style={{ backgroundColor: isClicked ? 'black' : 'transparent' }} // Set background to black when fading out
         >
             <img src="/images/hero/cfxr-bird-logo.svg" />
             <img src="/images/hero/cfxr-logo-hero.svg" alt="CFXR Logo" className="CFXR-logo" />
