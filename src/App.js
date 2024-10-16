@@ -51,10 +51,13 @@ class ErrorBoundary extends React.Component {
 function AppContent() {
     const location = useLocation();
     const isCFXRPage = location.pathname === "/";
+    const isCelesteFontainePage = location.pathname === "/CelesteFontaine";
 
     return (
         <>
-            {!isCFXRPage && <Header />}
+            {/* Render Header only if not on CFXR or CelesteFontaine page */}
+            {!isCFXRPage && !isCelesteFontainePage && <Header />}
+            {/* Render NavBar only if not on CFXR page */}
             {!isCFXRPage && <NavBar />}
             <Suspense fallback={<div className="text-white text-center mt-3">Loading...</div>}>
                 <ErrorBoundary>
@@ -87,6 +90,7 @@ function AppContent() {
                     </Routes>
                 </ErrorBoundary>
             </Suspense>
+            {/* Render Footer only if not on CFXR page */}
             {!isCFXRPage && <Footer />}
         </>
     );
