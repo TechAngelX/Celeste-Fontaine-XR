@@ -9,7 +9,7 @@ const NavBar = () => {
     { to: "/contact-us", label: "Contact Us" },
     { to: "/blog", label: "Blog" },
     { to: "/blog/detail", label: "Blog Detail" },
-    { to: "/fsafasf", label: "404 Page Not Found" },
+    { to: "/404", label: "404 Page Not Found" },
     { to: "/500", label: "500 Internal Server Error" }
   ];
 
@@ -18,7 +18,7 @@ const NavBar = () => {
     "Bespoke",
     "Accessories",
     "CFXR",
-    "Jewellery",
+    "Sunglasses",
     "About"
   ];
 

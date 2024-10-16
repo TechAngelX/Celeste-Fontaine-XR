@@ -14,7 +14,7 @@ const FilterCategory = () => {
       });
     }, { threshold: 0.1 });
 
-    const fadeInElements = document.querySelectorAll('.ricki-fade-in');
+    const fadeInElements = document.querySelectorAll('.CFXR-page2-fade-in');
     fadeInElements.forEach((element) => {
       observer.observe(element);
     });
@@ -27,7 +27,7 @@ const FilterCategory = () => {
   }, []);
 
   return (
-      <div className="card mb-3 ricki-glass-effect ricki-fade-in ">
+      <div className="card mb-3 ricki-glass-effect CFXR-page2-fade-in ">
         <div
             className="card-header fw-bold text-uppercase accordion-icon-button"
             data-bs-toggle="collapse"
