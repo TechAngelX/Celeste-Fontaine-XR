@@ -2,16 +2,10 @@
 .cfxr-p2-body {
     display: flex;
     flex-direction: column;
-    overflow-y: scroll; /* Ensures the content can scroll */
-    scrollbar-width: none; /* Hides scrollbar for Firefox */
+    overflow-y: auto;
     height: 100vh;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     position: relative;
-}
-
-/* Hides scrollbar for Webkit-based browsers (Chrome, Safari, etc.) */
-.cfxr-p2-body::-webkit-scrollbar {
-    display: none;
 }
 
 /* Vanta Background Styles */
@@ -21,7 +15,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    z-index: -1; /* Behind all elements */
+    z-index: 0; /* Behind all elements */
 }
 
 /* Content Container */
@@ -38,7 +32,7 @@
     margin: 60px 0;
     padding: 20px;
     width: 80%;
-    background: rgba(0, 0, 0, 0.7);
+    background: transparent; /* Slightly transparent box background */
     color: #fff;
     text-align: center;
     border-radius: 8px;

@@ -16,8 +16,8 @@ const CelesteFontaine = () => {
             gyroControls: false,
             scale: 1.00,
             scaleMobile: 1.00,
-            color1: 0x8c8c,
-            color2: 0xf2e735,
+            color1: 0x767676,
+            color2: 0x3c3c3c,
             size: 0.20
         });
 
