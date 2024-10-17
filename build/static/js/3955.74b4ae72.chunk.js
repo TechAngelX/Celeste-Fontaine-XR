@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkcfxr_website=self.webpackChunkcfxr_website||[]).push([[3955],{3955:function(e,s,t){t.r(s);t(2791),t(9174);var a=t(184);s.default=function(e){return(0,a.jsx)("div",{className:"card mb-3 ricki-glass-effect CFXR-page2-fade-in ",children:(0,a.jsxs)("div",{className:"card-body fw-bold text-uppercase",children:["Filter by"," ",(0,a.jsxs)("button",{type:"reset",className:"btn btn-sm btn-light",children:[(0,a.jsx)("span",{"aria-hidden":"true",children:"\xd7"})," Clear All"]})]})})}}}]);
+//# sourceMappingURL=3955.74b4ae72.chunk.js.map

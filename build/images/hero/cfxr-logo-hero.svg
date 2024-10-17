@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180.07 41.7">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        font-family: SFProDisplay-Ultralight, 'SF Pro Display';
+        font-size: 28px;
+        font-weight: 100;
+        stroke: #fff;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-2 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-3 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-4 {
+        letter-spacing: -.04em;
+      }
+    </style>
+  </defs>
+  <text class="cls-1" transform="translate(.5 24.36)"><tspan x="0" y="0">céles</tspan><tspan class="cls-2" x="57.44" y="0">t</tspan><tspan x="63.77" y="0">e | </tspan><tspan class="cls-4" x="93.13" y="0">f</tspan><tspan x="98.85" y="0">on</tspan><tspan class="cls-3" x="127.15" y="0">t</tspan><tspan x="133.49" y="0">aine</tspan></text>
+</svg>
