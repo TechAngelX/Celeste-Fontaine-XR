@@ -45,14 +45,25 @@ const CelesteFontaine = () => {
 
                     <div className="boxes-container">
                         <div className="glass-box" data-aos="zoom-in">
+                            <img src="/images/clothes/shoes-4.png" alt="Shoes"
+                                 style={{maxWidth: '100%', borderRadius: '15px'}}/>
+
                             <h4>Box Table 1</h4>
                             <p>Description for box table 1.</p>
                         </div>
                         <div className="glass-box" data-aos="zoom-in">
+                            <img src="/images/clothes/bballcap-1.png" alt="baseball cap"
+                                 style={{maxWidth: '100%', borderRadius: '15px'}}/>
+
+
+
                             <h4>Box Table 2</h4>
                             <p>Description for box table 2.</p>
                         </div>
                         <div className="glass-box" data-aos="zoom-in">
+                            <img src="/images/clothes/hoodie-1.png" alt="hoodie"
+                                 style={{maxWidth: '100%', borderRadius: '15px'}}/>
+
                             <h4>Box Table 3</h4>
                             <p>Description for box table 3.</p>
                         </div>
