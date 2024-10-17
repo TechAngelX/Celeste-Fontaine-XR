@@ -42,14 +42,29 @@ const CelesteFontaine = () => {
                 </div>
                 <div className="section" data-aos="fade-up">
                     <h2 className="cool-text">Luxury Meets Innovation</h2>
+
+                    <div className="boxes-container">
+                        <div className="glass-box" data-aos="zoom-in">
+                            <h4>Box Table 1</h4>
+                            <p>Description for box table 1.</p>
+                        </div>
+                        <div className="glass-box" data-aos="zoom-in">
+                            <h4>Box Table 2</h4>
+                            <p>Description for box table 2.</p>
+                        </div>
+                        <div className="glass-box" data-aos="zoom-in">
+                            <h4>Box Table 3</h4>
+                            <p>Description for box table 3.</p>
+                        </div>
+                    </div>
+                    <div className="boxes-container">
+
+                    </div>
+
                 </div>
                 <div className="section" data-aos="fade-up">
                     <h3 className="cool-text">Explore Our Styles</h3>
-                    <div className="boxes-container">
-                        <div className="box" data-aos="zoom-in">Box 1</div>
-                        <div className="box" data-aos="zoom-in">Box 2</div>
-                        <div className="box" data-aos="zoom-in">Box 3</div>
-                    </div>
+
                 </div>
                 <div className="section" data-aos="fade-up">
                     <h4 className="cool-text">Contact Us</h4>
