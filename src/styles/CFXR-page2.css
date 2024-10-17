@@ -52,8 +52,8 @@
     margin: 0 20px;
     padding: 50px; /* Adjust padding if needed */
     background: transparent; /* White background with transparency */
-    border: 1px solid #d3d4d5;
-    border-radius: 25px; /* Make boxes rounded */
+    border: 0.2px solid #d3d4d5;
+    border-radius: 15px; /* Make boxes rounded */
     backdrop-filter: blur(10px); /* Frosted glass effect */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Shadow for depth */
     color: white; /* Text color */
