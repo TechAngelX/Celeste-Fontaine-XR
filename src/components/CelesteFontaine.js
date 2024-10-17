@@ -3,7 +3,7 @@ import Vanta from 'vanta/dist/vanta.cells.min';
 import * as THREE from 'three';
 import 'aos/dist/aos.css'; // Import AOS styles
 import AOS from 'aos'; // Import AOS library
-import '../styles/CFXR-page2-copy.css';
+import '../styles/CFXR-page2.css';
 
 const CelesteFontaine = () => {
     useEffect(() => {
