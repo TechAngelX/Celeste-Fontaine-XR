@@ -20,7 +20,6 @@ body, html {
     radial-gradient(circle, rgba(0, 0, 255, 0.1) 10%, transparent 30%);
     background-size: 100% 100%;
     background-position: 0 0, 100% 100%, 50% 50%;
-    animation: nebula-animation 10s infinite alternate;
 }
 
 /* Style for the logo within CFXR */
@@ -30,18 +29,3 @@ body, html {
     animation: fadeIn 1.5s ease-in-out; /* Apply fade-in animation */
 }
 
-/* Optional fade-in animation */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-/* Nebula animation */
-@keyframes nebula-animation {
-    0% {
-        background-size: 100% 100%;
-    }
-    100% {
-        background-size: 150% 150%;
-    }
-}

@@ -2,20 +2,10 @@
 .cfxr-p2-body {
     display: flex;
     flex-direction: column;
-    overflow-y: auto;
+    overflow-y: scroll;
     height: 100vh;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     position: relative;
-}
-
-/* Vanta Background Styles */
-.vanta-background {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 0; /* Behind all elements */
 }
 
 /* Content Container */
@@ -24,20 +14,48 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    padding: 20px;
+    padding: 5px;
 }
 
-/* Section Styles */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Section Specific Styles */
 .section {
     margin: 60px 0;
     padding: 20px;
     width: 80%;
-    background: transparent; /* Slightly transparent box background */
+    background: transparent;
     color: #fff;
     text-align: center;
-    border-radius: 8px;
 }
-/* Boxes Container */
+
+/* Independent styles for the first section */
+.first-section {
+    display: flex;
+    flex-direction: column; /* Keep as column for single column layout */
+}
+
+/* Section 2: Grid Layout */
+.grid-layout {
+    display: flex;
+    justify-content: space-between; /* Space between text and image */
+    align-items: center;
+}
+
+/* Section 3: Video Section */
+.video-section {
+    width: 100%;
+}
+
+/* Full-width Video Styles */
+.full-width-video {
+    width: 100%; /* Make video full width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Fourth Section: Boxes Container */
 .boxes-container {
     display: flex;
     justify-content: space-around;
@@ -49,8 +67,8 @@
 /* Glass Box Styles */
 .glass-box {
     flex: 1; /* Make the boxes flexible */
-    margin: 0 20px;
-    padding: 50px; /* Adjust padding if needed */
+    margin: 10px; /* Margin for spacing */
+    padding: 20px; /* Adjust padding if needed */
     background: transparent; /* White background with transparency */
     border: 0.2px solid #d3d4d5;
     border-radius: 15px; /* Make boxes rounded */
@@ -60,8 +78,13 @@
     text-align: center;
     transition: transform 0.3s ease;
     min-height: 300px; /* Set a minimum height for the boxes */
-    width: 90%; /* Adjusted width to make the boxes wider */
-    max-width: 700px; /* Increased max width for wider boxes */
+    max-width: 300px; /* Adjust max width for boxes */
+    overflow: hidden; /* Ensures content does not overflow */
+}
+
+.glass-box img {
+    width: 100%; /* Ensure images fit within the box */
+    height: auto; /* Maintain aspect ratio */
 }
 
 .glass-box:hover {
@@ -75,14 +98,15 @@
 
 /* Track (background) */
 ::-webkit-scrollbar-track {
-    background: #3c3c3c; /* Dark grey background */
+    background: #000000; /* Dark grey background */
     border-radius: 10px; /* Rounded edges */
 }
 
 /* Handle (thumb) */
 ::-webkit-scrollbar-thumb {
-    background: #767676; /* Slightly lighter dark grey */
-    border-radius: 10px; /* Rounded edges */
+    background: #4f4e4e; /* Slightly lighter dark grey */
+    width: 2px;
+    border-radius: 0; /* Rounded edges */
 }
 
 /* Handle on hover */
