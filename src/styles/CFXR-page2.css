@@ -12,7 +12,7 @@
 .vanta-background {
     width: 100%;
     height: 100%;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     z-index: 0; /* Behind all elements */
@@ -68,3 +68,24 @@
     transform: scale(1.05); /* Scale effect on hover */
 }
 
+/* Targeting the entire scrollbar */
+::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+}
+
+/* Track (background) */
+::-webkit-scrollbar-track {
+    background: #3c3c3c; /* Dark grey background */
+    border-radius: 10px; /* Rounded edges */
+}
+
+/* Handle (thumb) */
+::-webkit-scrollbar-thumb {
+    background: #767676; /* Slightly lighter dark grey */
+    border-radius: 10px; /* Rounded edges */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #5a5a5a; /* Even lighter dark grey on hover */
+}

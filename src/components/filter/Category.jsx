@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import '../../styles/index.css';
-import '../../styles/FilterCategory.css';
 
 const FilterCategory = () => {
   useEffect(() => {
