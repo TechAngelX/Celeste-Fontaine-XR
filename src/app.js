@@ -1,12 +1,16 @@
-import React, { Suspense, lazy } from "react";
-import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
+// app.js for all React components and routing
+
+import React, { Suspense, lazy, useEffect } from "react"; // The Core React Library
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom"; // Provides  routing functionality, enabling navigation.
+import 'aos/dist/aos.css';
+import AOS from 'aos'; // Animate On Scroll - a library that animates elements when you scroll down.
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.js";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import NavBar from "./components/NavBar";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import "./styles/App.css";
+import "./styles/app.css";
 import CFXR from "./components/CFXR";
 
 // Lazy load your views
@@ -55,9 +59,8 @@ function AppContent() {
 
     return (
         <>
-            {/* Render Header only if not on CFXR or CelesteFontaine page */}
+            {/* Render Header and NavBar conditionally */}
             {!isCFXRPage && !isCelesteFontainePage && <Header />}
-            {/* Render NavBar only if not on CFXR page */}
             {!isCFXRPage && <NavBar />}
             <Suspense fallback={<div className="text-white text-center mt-3">Loading...</div>}>
                 <ErrorBoundary>
@@ -90,13 +93,16 @@ function AppContent() {
                     </Routes>
                 </ErrorBoundary>
             </Suspense>
-            {/* Render Footer only if not on CFXR page */}
             {!isCFXRPage && <Footer />}
         </>
     );
 }
 
 function App() {
+    useEffect(() => {
+        AOS.init();
+    }, []);
+
     return (
         <BrowserRouter>
             <AppContent />

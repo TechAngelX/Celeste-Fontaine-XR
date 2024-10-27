@@ -5,7 +5,7 @@ import ReactDOM from "react-dom/client";
 // import './styles/index.css';
 import './styles/index.scss';
 
-import App from "./App";
+import App from "./app";
 import * as serviceWorker from "./server/serviceWorker";
 import { createStore } from "redux";
 import { Provider } from "react-redux";

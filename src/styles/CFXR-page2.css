@@ -29,6 +29,7 @@ html {
     background: transparent;
     color: #fff;
     text-align: center;
+    border-radius: 8px;
 }
 
 /* Independent styles for the first section */
@@ -49,7 +50,6 @@ html {
     width: 100%;
 }
 
-/* Full-width Video Styles */
 .full-width-video {
     width: 100%; /* Make video full width */
     height: auto; /* Maintain aspect ratio */
@@ -67,7 +67,7 @@ html {
 /* Glass Box Styles */
 .glass-box {
     flex: 1; /* Make the boxes flexible */
-    margin: 10px; /* Margin for spacing */
+    margin: 0 20px;
     padding: 20px; /* Adjust padding if needed */
     background: transparent; /* White background with transparency */
     border: 0.2px solid #d3d4d5;
@@ -79,12 +79,6 @@ html {
     transition: transform 0.3s ease;
     min-height: 300px; /* Set a minimum height for the boxes */
     max-width: 300px; /* Adjust max width for boxes */
-    overflow: hidden; /* Ensures content does not overflow */
-}
-
-.glass-box img {
-    width: 100%; /* Ensure images fit within the box */
-    height: auto; /* Maintain aspect ratio */
 }
 
 .glass-box:hover {

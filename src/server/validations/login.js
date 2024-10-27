@@ -1,8 +1,15 @@
+//server/.login.js
 import React from "react";
+
+const express = require('express');
+const router = express.Router();
+const User = require('../models/User'); // The MongoDB database objects
+
+
 import { Field, reduxForm } from "redux-form";
 import { compose } from "redux";
 import { Link } from "react-router-dom";
-import renderFormGroupField from "../helpers/renderFormGroupField";
+import renderFormGroupField from "../../helpers/renderFormGroupField";
 import {
     required,
     maxLength20,
@@ -10,7 +17,7 @@ import {
     maxLengthMobileNo,
     minLengthMobileNo,
     digit,
-} from "../helpers/validation";
+} from "../../helpers/validation";
 import { ReactComponent as IconPhone } from "bootstrap-icons/icons/phone.svg";
 import { ReactComponent as IconShieldLock } from "bootstrap-icons/icons/shield-lock.svg";
 

@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import '../styles/CFXR-page2.css';
+import AOS from 'aos'; // Ensure AOS is imported
+import 'aos/dist/aos.css';
 
 const CelesteFontaine = () => {
+    useEffect(() => {
+        AOS.init(); // Initialize AOS
+        console.log("AOS initialized");
+
+    }, []);
+
     return (
         <div className="cfxr-p2-body">
             <div className="content-container">
@@ -25,7 +33,7 @@ const CelesteFontaine = () => {
                             <p>Explore our latest collection that combines tradition and modernity.</p>
                         </div>
                         <div className="image-content">
-                            <img src="/images/clothes/shoes-4.png" alt="Shoes" />
+                            <img src="/images/models/hcouturewoman-p2.webp" alt="Haute Couture Woman" width="250" height="350" />
                         </div>
                     </div>
                 </div>
@@ -40,20 +48,20 @@ const CelesteFontaine = () => {
 
                 {/* Section 4: Three Grid of Image Boxes */}
                 <div className="section fourth-section">
-                    <h3 className="cool-text">Explore Our Styles</h3>
+                    <h1>Explore Our Styles</h1>
                     <div className="boxes-container">
-                        <div className="glass-box">
-                            <img src="/images/clothes/shoes-4.png" alt="Shoes" />
+                        <div className="glass-box" data-aos="fade-up" data-aos-duration="500" data-aos-delay="100">
+                            <img src="/images/clothes/shoes-4.png" alt="Stylish Shoes" />
                             <h4>Box Table 1</h4>
                             <p>Description for box table 1.</p>
                         </div>
-                        <div className="glass-box">
+                        <div className="glass-box" data-aos="fade-up" data-aos-duration="500" data-aos-delay="200">
                             <img src="/images/clothes/bballcap-1.png" alt="Baseball Cap" />
                             <h4>Box Table 2</h4>
                             <p>Description for box table 2.</p>
                         </div>
-                        <div className="glass-box">
-                            <img src="/images/clothes/hoodie-1.png" alt="Hoodie" />
+                        <div className="glass-box" data-aos="fade-up" data-aos-duration="500" data-aos-delay="300">
+                            <img src="/images/clothes/hoodie-1.png" alt="Casual Hoodie" />
                             <h4>Box Table 3</h4>
                             <p>Description for box table 3.</p>
                         </div>
@@ -63,7 +71,6 @@ const CelesteFontaine = () => {
                 {/* Section 5: Highlighting Virtual Try-On Technology */}
                 <div className="section fifth-section">
                     <h4 className="cool-text">Experience the softWEAR Virtual Try-On Technology</h4>
-
                     <div className="highlight-bottom-line">
                         <p>Discover a new way to shop with our innovative technology!</p>
                     </div>

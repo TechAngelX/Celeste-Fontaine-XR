@@ -1,9 +1,12 @@
+// server.js - for all backend server / DB related stuff
+
+require('dotenv').config();
+const mongoose = require('mongoose');
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
-const dotenv = require('dotenv');
 const fs = require('fs');
-const signUpAuthRoutes = require('./RegisterAuth');
+const signUpAuthRoutes = require('./validations/register');
 
 const app = express();
 
@@ -24,6 +27,15 @@ app.use(cors({
 }));
 
 app.use(express.json());
+
+// Connect to MongoDB
+mongoose.connect(process.env.DB_CONNECTOR, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    serverSelectionTimeoutMS: 5000 // Adjust this value as needed
+})
+    .then(() => console.log('Connected to MongoDB...'))
+    .catch(err => console.error('Failed to connect to MongoDB:', err.message));
 
 // Serve static files (e.g., images, CSS, JavaScript)
 app.use(express.static(path.join(__dirname, '../public')));
