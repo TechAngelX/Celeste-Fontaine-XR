@@ -1,14 +1,14 @@
-import React, { useState } from "react"; // Import useState for state management
+//RegisterForm.jsx - front-facing pretty register form
+import React, { useState } from "react";
 import { Field, reduxForm } from "redux-form";
 import { compose } from "redux";
-import { Link, useNavigate } from "react-router-dom"; // Import useNavigate for redirection
+import { Link, useNavigate } from "react-router-dom";
 import renderFormGroupField from "../../helpers/renderFormGroupField";
 import { ReactComponent as IconUser } from "bootstrap-icons/icons/person.svg";
 import { ReactComponent as IconShieldLock } from "bootstrap-icons/icons/shield-lock.svg";
 import { ReactComponent as IconEnvelope } from "bootstrap-icons/icons/envelope.svg";
 import { required, maxLength20, minLength8, email } from "../../helpers/validation";
 
-// Helper function to render a field
 const renderField = ({
                        name,
                        type,
@@ -33,51 +33,51 @@ const renderField = ({
 );
 
 const RegisterForm = ({ handleSubmit, submitting, submitFailed }) => {
-  const [message, setMessage] = useState(""); // State to hold feedback message
-  const navigate = useNavigate(); // Initialize useNavigate for redirection
+  const [message, setMessage] = useState("");
+  const navigate = useNavigate();
 
   const onSubmit = async (formData) => {
-    console.log("Form submitted:", formData); // Log the form data
+    console.log("Form submitted:", formData);
 
     try {
-      const response = await fetch("http://localhost:5503/account/register", {
+      const response = await fetch(`${process.env.HOST}:${process.env.PORT}/account/register`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          firstName: formData.firstName,
-          lastName: formData.lastName,
-          pWord: formData.password, // Ensure to send password as pWord
+          uname: formData.firstName, // Assuming uname corresponds to first name
+          pword: formData.password, // Assuming pWord corresponds to password
+          fname: formData.firstName,
+          lname: formData.lastName,
           email: formData.email,
-        }), // Send the data without accType
+          accType: 0 // Set the accType directly as per your requirement
+        }),
       });
 
-      console.log("Response status:", response.status); // Log the response status
+      console.log("Response status:", response.status);
 
       if (!response.ok) {
         const errorData = await response.json();
         console.error("Signup failed:", errorData.error);
-        setMessage(`Signup failed: ${errorData.error}`); // Set error message
+        setMessage(`Signup failed: ${errorData.error}`);
         return;
       }
 
       console.log("User signed up successfully");
-      setMessage("Signup successful!"); // Set success message
-
-      // Redirect to home page after successful signup
+      setMessage("Signup successful!");
       navigate("/home");
 
     } catch (error) {
       console.error("Error in registration process:", error.message);
-      setMessage(`Error: ${error.message}`); // Set error message
+      setMessage(`Error: ${error.message}`);
     }
   };
 
   return (
       <form
-          onSubmit={handleSubmit(onSubmit)} // Handle form submission with Redux Form
-          className={`needs-validation ${submitFailed ? "was-validated" : ""}`} // Conditional class for validation
+          onSubmit={handleSubmit(onSubmit)}
+          className={`needs-validation ${submitFailed ? "was-validated" : ""}`}
           noValidate
       >
         {renderField({
@@ -86,7 +86,7 @@ const RegisterForm = ({ handleSubmit, submitting, submitFailed }) => {
           label: "First Name",
           placeholder: "Enter your first name",
           icon: IconUser,
-          validate: [required], // Validation function for first name
+          validate: [required],
           required: true,
           className: "mb-3",
         })}
@@ -97,7 +97,7 @@ const RegisterForm = ({ handleSubmit, submitting, submitFailed }) => {
           label: "Last Name",
           placeholder: "Enter your last name",
           icon: IconUser,
-          validate: [required], // Validation function for last name
+          validate: [required],
           required: true,
           className: "mb-3",
         })}
@@ -108,7 +108,7 @@ const RegisterForm = ({ handleSubmit, submitting, submitFailed }) => {
           label: "Email",
           placeholder: "Enter your email",
           icon: IconEnvelope,
-          // validate: [required, email], // Validation functions for email
+          validate: [required, email],
           required: true,
           className: "mb-3",
         })}
@@ -119,7 +119,7 @@ const RegisterForm = ({ handleSubmit, submitting, submitFailed }) => {
           label: "Your Password (minimum 8 characters)",
           placeholder: "******",
           icon: IconShieldLock,
-          validate: [required, minLength8, maxLength20], // Validation functions for password
+          validate: [required, minLength8, maxLength20],
           required: true,
           className: "mb-3",
         })}
@@ -128,7 +128,7 @@ const RegisterForm = ({ handleSubmit, submitting, submitFailed }) => {
           <button
               type="submit"
               className="btn btn-primary mb-3"
-              disabled={submitting} // Disable button while submitting
+              disabled={submitting}
           >
             Sign Up
           </button>
@@ -141,29 +141,11 @@ const RegisterForm = ({ handleSubmit, submitting, submitFailed }) => {
         <div className="clearfix"></div>
         <hr />
 
-        {/* Acknowledgment Message */}
         {message && (
             <div className={`alert ${message.includes("failed") ? "alert-danger" : "alert-success"}`} role="alert">
               {message}
             </div>
         )}
-
-        <div className="row">
-          <div className="col text-center">
-            <p className="text-muted small">Or you can join with</p>
-          </div>
-          <div className="col text-center">
-            <Link to="/" className="btn btn-light text-white bg-twitter me-3">
-              <i className="bi bi-twitter-x" />
-            </Link>
-            <Link to="/" className="btn btn-light text-white me-3 bg-facebook">
-              <i className="bi bi-facebook mx-1" />
-            </Link>
-            <Link to="/" className="btn btn-light text-white me-3 bg-google">
-              <i className="bi bi-google mx-1" />
-            </Link>
-          </div>
-        </div>
       </form>
   );
 };

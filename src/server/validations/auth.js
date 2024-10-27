@@ -1,75 +1,67 @@
+// auth.js - dedicated to handling login/registration, token authentication, and validation
+
 const express = require('express');
 const router = express.Router();
-const User = require('../models/User');
+const User = require('../models/UserModel');
 const { registerValidation, loginValidation } = require('../validations/validation');
 const bcryptjs = require('bcryptjs');
-const jsonwebtoken = require('jsonwebtoken');
+const jwt = require('jsonwebtoken');
 
 // Test route
 router.get('/test', (req, res) => {
     res.send('Test route is working');
 });
 
-// Register route
-router.post('/validations/rmegister', async (req, res) => {
-    console.log(req.body);
-
-    // Validation 1 to check user input
+// User Registration Route
+router.post('/register', async (req, res) => {
     const { error } = registerValidation(req.body);
-    if (error) {
-        return res.status(400).send({ message: error.details[0].message });
-    }
+    if (error) return res.status(400).send({ message: error.details[0].message });
 
-    // Validation 2 to check if user exists!
-    const userExists = await User.findOne({ email: req.body.email });
-    if (userExists) {
-        return res.status(400).send({ message: 'User already exists' });
-    }
-
-    // Create a hashed representation of the password
-    const salt = await bcryptjs.genSalt(10); // Increased salt rounds for better security
-    const hashedPassword = await bcryptjs.hash(req.body.password, salt);
-
-    // Code to insert data
-    const user = new User({
-        username: req.body.username,
-        email: req.body.email,
-        password: hashedPassword
-    });
+    const { fname, lname, email, password } = req.body;
+    const username = generateUsername(fname, lname);
 
     try {
-        const savedUser = await user.save();
-        res.send(savedUser);
+        await validateUserExistence(username, email);
+        const hashedPassword = await bcryptjs.hash(password, 10);
+        const newUser = new User({ username, email, password: hashedPassword });
+        const savedUser = await newUser.save();
+        res.status(201).json({ message: 'User registered successfully!', userId: savedUser._id });
     } catch (err) {
-        res.status(400).send({ message: err.message });
+        console.error('Error registering user:', err);
+        res.status(400).json({ message: err.message });
     }
 });
 
-// Login route
-router.post('/validations/login', async (req, res) => {
-    console.log(req.body);
-
-    // Validation 1 to check user input
+// User Login Route
+router.post('/login', async (req, res) => {
     const { error } = loginValidation(req.body);
-    if (error) {
-        return res.status(400).send({ message: error.details[0].message });
-    }
+    if (error) return res.status(400).send({ message: error.details[0].message });
 
-    // Validation 2 to check if user exists!
     const user = await User.findOne({ email: req.body.email });
-    if (!user) {
-        return res.status(400).send({ message: 'User does not exist' });
-    }
+    if (!user) return res.status(400).send({ message: 'User does not exist' });
 
-    // Validation 3 to check user password
-    const passwordValidation = await bcryptjs.compare(req.body.password, user.password);
-    if (!passwordValidation) {
-        return res.status(400).send({ message: 'Password is wrong' });
-    }
+    const passwordValid = await bcryptjs.compare(req.body.password, user.password);
+    if (!passwordValid) return res.status(400).send({ message: 'Invalid password' });
 
-    // Generate an auth-token
-    const token = jsonwebtoken.sign({ _id: user._id }, process.env.TOKEN_SECRET);
+    //Generate an auth-token
+    const token = jwt.sign({ _id: user._id }, process.env.TOKEN_SECRET);
     res.header('auth-token', token).send({ 'auth-token': token });
 });
+
+// Helper Functions
+const generateUsername = (fname, lname) => {
+    const firstInitial = fname.charAt(0).toLowerCase();
+    const lastFiveChars = lname.substring(0, 5).toLowerCase();
+    const randomNumbers = Math.floor(100 + Math.random() * 900);
+    return `${firstInitial}${lastFiveChars}${randomNumbers}`;
+};
+
+const validateUserExistence = async (username, email) => {
+    const existingUser = await User.findOne({ username });
+    const existingEmail = await User.findOne({ email });
+
+    if (existingUser) throw new Error('Username already exists');
+    if (existingEmail) throw new Error('Email already exists');
+};
 
 module.exports = router;
