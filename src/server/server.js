@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 3000;
 serverApp.use(express.json());
 
 // Import the user route and mount it
-const userRoute = require('./routes/users');
+const userRoute = require('./routes/signUpAuthValidations');
 serverApp.use('/account/users', userRoute);
 
 // Basic route for checking server status
