@@ -10,13 +10,13 @@ const userSchema = mongoose.Schema({
   uname: {
     type: String, // Represents UNAME
     required: true,
-    minlength: 8, // Minimum length to match "1st initial, first 5 characters of last name, 3 random numbers"
-    maxlength: 8
+    minlength: 9, // Minimum length to match "1st initial, first 5 characters of last name, 3 random numbers"
+    maxlength: 9
   },
   pword: {
     type: String, // Represents PWORD
     required: true,
-    minlength: 8, // Minimum length for hashed password
+    minlength: 6, // Minimum length for hashed password
     maxlength: 1024
   },
   fname: {

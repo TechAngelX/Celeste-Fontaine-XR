@@ -9,9 +9,6 @@ const mongoose = require('mongoose');
 const serverApp = express();
 const PORT = process.env.PORT || 3000;
 
-// Log DB_CONNECTOR for troubleshooting
-console.log('DB_CONNECTOR:', process.env.DB_CONNECTOR);
-
 // Middleware for parsing JSON requests
 serverApp.use(express.json());
 
