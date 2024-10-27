@@ -1,22 +1,39 @@
-require('dotenv').config();
-const express = require('express');
+// Load environment variables from .env file
+require('dotenv').config({ path: './config/.env' });
 
+// Import required modules
+const express = require('express');
+const mongoose = require('mongoose');
+
+// Initialize the Express app
 const serverApp = express();
 const PORT = process.env.PORT || 3000;
 
-// Middleware
-serverApp.use(express.json()); // Parse JSON requests
+// Log DB_CONNECTOR for troubleshooting
+console.log('DB_CONNECTOR:', process.env.DB_CONNECTOR);
 
-// Import the user route
-const userRoute = require('./routes/users'); // Ensure the path is correct
-serverApp.use('/users', userRoute); // Mount the user route
+// Middleware for parsing JSON requests
+serverApp.use(express.json());
 
-// Basic route
+// Import the user route and mount it
+const userRoute = require('./routes/users');
+serverApp.use('/account/users', userRoute);
+
+// Basic route for checking server status
 serverApp.get('/', (req, res) => {
     res.send('Server is running!');
 });
 
-// Start the server
-serverApp.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-});
+// Connect to MongoDB
+const dbConnector = process.env.DB_CONNECTOR;
+mongoose.connect(dbConnector)
+    .then(() => {
+        console.log('DB is now connected...');
+        // Start the server only after successful DB connection
+        serverApp.listen(PORT, () => {
+            console.log(`Server is running on port ${PORT}`);
+        });
+    })
+    .catch((err) => {
+        console.error('DB connection error:', err.message);
+    });
